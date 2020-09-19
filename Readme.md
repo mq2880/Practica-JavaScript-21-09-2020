@@ -20,14 +20,7 @@ Todos los ejercicios están en una sola página HTML y tienen las siguientes car
 - Si el usuario no introduce nada se muestra en pantalla el mensaje: *El usuario no seleccionó ningún valor.* y el programa finaliza
 
 
-
-
-
-
-
 ## Ejercicios
-
-
 
 **Ejercicio: 60 Ref:16**
 *Escriba un programa JavaScript para calcular la diferencia absoluta entre un número especificado y 19. Devuelve el triple de su diferencia absoluta si el número especificado es mayor que 19.*
