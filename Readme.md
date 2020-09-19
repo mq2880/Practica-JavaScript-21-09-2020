@@ -22,6 +22,7 @@ Todos los ejercicios están en una sola página HTML y tienen las siguientes car
 
 
 
+
 ## Ejercicios
 
 
@@ -62,6 +63,7 @@ function CalcularNumero()
 ```
 
 Se ha utilizado el método ABS del objeto Math para obtener el valor absoluto y realizar las operaciones oportunas.
+
 
 
 
