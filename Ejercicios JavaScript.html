@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=100, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            p{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+        </style>
+    </head>
+    <body>
+        <div>
+            <p><strong>Ejercicio: 60 Referencia: 16</strong><BR><br><em> Escriba un programa JavaScript para calcular la diferencia absoluta entre un número especificado y 19. Devuelve el triple de su diferencia absoluta si el número especificado es mayor que 19.</em></p>
+            <pre>
+            function <strong>CalcularNumero() </strong>
+            {
+                var result;
+                var mensaje = "Introduzca un número"
+                document.getElementById("ValEj60").innerHTML = "Solución: ";
+                while (valUsuario==undefined || valUsuario=="")
+                {
+                    var valUsuario = prompt(mensaje);
+
+                    //Si el usuario pulsa cancelar salimos
+                    if(valUsuario == null | valUsuario ==  "") {
+                        document.getElementById("ValEj60").innerHTML = "Solución: El usuario no seleccionó ningún valor." ;
+                        break;
+                    }
+
+                    valUsuario = Number(valUsuario);
+                    //Comprobamos que el usuario a introducido un numero
+                    if(isNaN(valUsuario)){
+                        valUsuario = "";
+                        mensaje = "El valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                    }
+                    else{
+                        if(valUsuario - 19 > 0){result = Math.abs(valUsuario - 19) * 3;}
+                        else{result = Math.abs(valUsuario - 19);}
+                        document.getElementById("ValEj60").innerHTML = "Solución: " + result;
+                        break;
+                    }
+                }
+            }
+        </pre>
+
+            <strong><p id="ValEj60">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+                function CalcularNumero() 
+                {
+                    var result;
+                    var mensaje = "Introduzca un número"
+                    document.getElementById("ValEj60").innerHTML = "Solución: ";
+                    while (valUsuario==undefined || valUsuario=="")
+                    {
+                        var valUsuario = prompt(mensaje);
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario == null | valUsuario ==  "") {
+                            document.getElementById("ValEj60").innerHTML = "Solución: El usuario no seleccionó ningún valor." ;
+                            break;
+                        }
+
+                        valUsuario = Number(valUsuario);
+                        //Comprobamos que el usuario a introducido un numero
+                        if(isNaN(valUsuario)){
+                            valUsuario = "";
+                            mensaje = "El valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                        }
+                        else{
+                            if(valUsuario - 19 > 0){result = Math.abs(valUsuario - 19) * 3;}
+                            else{result = Math.abs(valUsuario - 19);}
+                            document.getElementById("ValEj60").innerHTML = "Solución: " + result;
+                            break;
+                        }
+                    }
+                }
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 61 Referencia: 18</strong><BR><br><em>Escriba un programa JavaScript para verificar dos números dados y devolver verdadero si uno de los números es 50 o si su suma es 50.</em></p>
+            <pre>
+                function <strong>Devolver50</strong>() 
+                {
+                    var result;
+                    var mensaje1 = "Introduzca el primer número";
+                    var mensaje2 = "Introduzca el segundo número";
+                    document.getElementById("ValEj61").innerHTML = "Solución: ";
+                    while (valUsuario1 == undefined || valUsuario1=="" || valUsuario2 == null || valUsuario2 ==  "")
+                    {
+                        if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario1 == null | valUsuario1 ==  "") {
+                            document.getElementById("ValEj61").innerHTML = "Solución: El usuario no seleccionó ningún valor." ;
+                            break;
+                        }
+
+                        valUsuario1 = Number(valUsuario1);
+
+                        var valUsuario2 = prompt(mensaje2);
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario2 == null | valUsuario2 ==  "") {
+                            document.getElementById("ValEj61").innerHTML = "Solución: El usuario no seleccionó el segundo valor." ;
+                            break;
+                        }
+
+                        valUsuario2 = Number(valUsuario2);
+
+
+                        //Comprobamos que el usuario a introducido un numero en las dos ocasiones
+                        if(isNaN(valUsuario1)){
+                            valUsuario1 = "";
+                            mensaje = "El primer valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                        }
+                        else{
+                            if(isNaN(valUsuario2)){
+                                valUsuario2= "";
+                                mensaje = "El segundo valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                            }
+
+                            else{
+                                if(valUsuario1 + valUsuario2 == 50 | valUsuario1 == 50 | valUsuario2 == 50){result = "Verdadero";}
+                                else{result = "Falso";}
+                                document.getElementById("ValEj61").innerHTML = "Solución: " + result;
+                                break;
+                            }
+                        }
+                    }
+                }
+         </pre>
+
+            <strong><p id="ValEj61">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="Devolver50()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+                function Devolver50() 
+                {
+                    var result;
+                    var mensaje1 = "Introduzca el primer número";
+                    var mensaje2 = "Introduzca el segundo número";
+                    document.getElementById("ValEj61").innerHTML = "Solución: ";
+                    while (valUsuario1 == undefined || valUsuario1=="" || valUsuario2 == null || valUsuario2 ==  "")
+                    {
+                        if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario1 == null | valUsuario1 ==  "") {
+                            document.getElementById("ValEj61").innerHTML = "Solución: El usuario no seleccionó ningún valor." ;
+                            break;
+                        }
+
+                        valUsuario1 = Number(valUsuario1);
+
+                        var valUsuario2 = prompt(mensaje2);
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario2 == null | valUsuario2 ==  "") {
+                            document.getElementById("ValEj61").innerHTML = "Solución: El usuario no seleccionó el segundo valor." ;
+                            break;
+                        }
+
+                        valUsuario2 = Number(valUsuario2);
+
+
+                        //Comprobamos que el usuario a introducido un numero en las dos ocasiones
+                        if(isNaN(valUsuario1)){
+                            valUsuario1 = "";
+                            mensaje = "El primer valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                        }
+                        else{
+                            if(isNaN(valUsuario2)){
+                                valUsuario2= "";
+                                mensaje = "El segundo valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                            }
+
+                            else{
+                                if(valUsuario1 + valUsuario2 == 50 | valUsuario1 == 50 | valUsuario2 == 50){result = "Verdadero";}
+                                else{result = "Falso";}
+                                document.getElementById("ValEj61").innerHTML = "Solución: " + result;
+                                break;
+                            }
+                        }
+                    }
+                }
+            </script>
+        </div>
+        <div>
+            <p><strong>Ejercicio: 62 Referencia: 19</strong><BR><br><em>Escriba un programa JavaScript para verificar si un número entero está dentro de 20 de 100 o 400.</em></p>
+            <pre>
+                function <strong>EstaEntre</strong>() 
+                {
+                    var result;
+                    var mensaje1 = "Introduzca un número";
+                    document.getElementById("ValEj62").innerHTML = "Solución: ";
+                    while (valUsuario1 == undefined || valUsuario1=="")
+                    {
+                        if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario1 == null | valUsuario1 ==  "") {
+                            document.getElementById("ValEj62").innerHTML = "Solución: El usuario no seleccionó ningún valor." ;
+                            break;
+                        }
+
+                        valUsuario1 = Number(valUsuario1);
+
+                        //Comprobamos que el usuario a introducido un numero 
+                        if(isNaN(valUsuario1)){
+                            valUsuario1 = "";
+                            mensaje = "El valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                        }
+                        else{
+                            if(valUsuario1 &lt;= 20){
+                                result = "Valor comprendido entre 0 y 20"
+                            }
+                            else if(valUsuario1>20 && valUsuario1&lt;=100){
+                                result = "Valor comprendido entre 21 y 100"
+                            }
+                            else if(valUsuario1>100 && valUsuario1&lt;=400){
+                                result = "Valor comprendido entre 101 y 400";
+                            }
+                            else{result = "Valor mayor de 400";}
+                        }
+                        document.getElementById("ValEj62").innerHTML = "Solución: " + result;
+                        break;
+                    }
+                }
+            </pre>
+
+            <strong><p id="ValEj62">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="EstaEntre()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+                function EstaEntre() 
+                {
+                    var result;
+                    var mensaje1 = "Introduzca un número";
+                    document.getElementById("ValEj62").innerHTML = "Solución: ";
+                    while (valUsuario1 == undefined || valUsuario1=="")
+                    {
+                        if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario1 == null | valUsuario1 ==  "") {
+                            document.getElementById("ValEj62").innerHTML = "Solución: El usuario no seleccionó ningún valor." ;
+                            break;
+                        }
+
+                        valUsuario1 = Number(valUsuario1);
+
+                        //Comprobamos que el usuario a introducido un numero 
+                        if(isNaN(valUsuario1)){
+                            valUsuario1 = "";
+                            mensaje = "El valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                        }
+                        else{
+                            if(valUsuario1 <= 20){
+                                result = "Valor comprendido entre 0 y 20";
+                            }
+                            else if(valUsuario1>20 && valUsuario1<=100){
+                                result = "Valor comprendido entre 21 y 100";
+                            }
+                            else if(valUsuario1>100 && valUsuario1<=400){
+                                result = "Valor comprendido entre 101 y 400";
+                            }
+                            else{result = "Valor mayor de 400";}
+                        }
+                        document.getElementById("ValEj62").innerHTML = "Solución: " + result;
+                        break;
+                    }
+                }
+            </script>
+        </div>
+
+        <div id="Ejercicio63">
+            <p><strong>Ejercicio: 63 Referencia: 2</strong><BR><br><em>Escriba un programa JavaScript para imprimir el contenido de la ventana actual.</em></p>
+            <pre>
+                function <strong>Imprimir</strong>()
+                {
+                    window.print();
+                } 
+            </pre>
+
+            <strong><p id="ValEj63">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="Imprimir('Ejercicio63')" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+                function Imprimir(nombre) 
+                {
+                    window.print();
+                }
+            </script>
+        </div>
+
+        <div >
+            <p><strong>Ejercicio: 64 Referencia: 20</strong><BR><br><em>Escriba un programa JavaScript para verificar a partir de dos números enteros dados, si uno es positivo y otro negativo.</em></p>
+            <pre>
+                function <strong>Evaluar</strong>()
+                {
+                    var result;
+                    var mensaje1 = "Introduzca el primer número";
+                    var mensaje2 = "Introduzca el segundo número";
+                    document.getElementById("ValEj64").innerHTML = "Solución: ";
+                    while (valUsuario1 == undefined || valUsuario1=="" || valUsuario2 == null || valUsuario2 ==  "")
+                    {
+                        if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario1 == null | valUsuario1 ==  "") {
+                            document.getElementById("ValEj64").innerHTML = "Solución: El usuario no seleccionó ningún valor." ;
+                            break;
+                        }
+
+                        valUsuario1 = Number(valUsuario1);
+
+                        var valUsuario2 = prompt(mensaje2);
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario2 == null | valUsuario2 ==  "") {
+                            document.getElementById("ValEj64").innerHTML = "Solución: El usuario no seleccionó el segundo valor." ;
+                            break;
+                        }
+
+                        valUsuario2 = Number(valUsuario2);
+
+
+                        //Comprobamos que el usuario a introducido un numero en las dos ocasiones
+                        if(isNaN(valUsuario1)){
+                            valUsuario1 = "";
+                            mensaje = "El primer valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                        }
+                        else{
+                            if(isNaN(valUsuario2)){
+                                valUsuario2= "";
+                                mensaje = "El segundo valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                            }
+
+                            else{
+                                if(valUsuario1 >= 0 ){result = "El primer número introducido (" + valUsuario1 + ") es positivo ";}
+                                else{result = "El primer número introducido (" + valUsuario1 + ") es negativo ";}
+
+                                if(valUsuario2 >= 0 ){result += "y el segundo (" + valUsuario2 + ") es positivo";}
+                                else{result += "y el segundo (" + valUsuario2 + ") es negativo";}
+
+                                document.getElementById("ValEj64").innerHTML = "Solución: " + result;
+                                break;
+                            }
+                        }
+                    }
+                } 
+            </pre>
+
+            <strong><p id="ValEj64">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="Evaluar()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+                function Evaluar() 
+                {
+                    var result;
+                    var mensaje1 = "Introduzca el primer número";
+                    var mensaje2 = "Introduzca el segundo número";
+                    document.getElementById("ValEj64").innerHTML = "Solución: ";
+                    while (valUsuario1 == undefined || valUsuario1=="" || valUsuario2 == null || valUsuario2 ==  "")
+                    {
+                        if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario1 == null | valUsuario1 ==  "") {
+                            document.getElementById("ValEj64").innerHTML = "Solución: El usuario no seleccionó ningún valor." ;
+                            break;
+                        }
+
+                        valUsuario1 = Number(valUsuario1);
+
+                        var valUsuario2 = prompt(mensaje2);
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario2 == null | valUsuario2 ==  "") {
+                            document.getElementById("ValEj64").innerHTML = "Solución: El usuario no seleccionó el segundo valor." ;
+                            break;
+                        }
+
+                        valUsuario2 = Number(valUsuario2);
+
+
+                        //Comprobamos que el usuario a introducido un numero en las dos ocasiones
+                        if(isNaN(valUsuario1)){
+                            valUsuario1 = "";
+                            mensaje = "El primer valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                        }
+                        else{
+                            if(isNaN(valUsuario2)){
+                                valUsuario2= "";
+                                mensaje = "El segundo valor introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                            }
+
+                            else{
+                                if(valUsuario1 >= 0 ){result = "El primer número introducido (" + valUsuario1 + ") es positivo ";}
+                                else{result = "El primer número introducido (" + valUsuario1 + ") es negativo ";}
+
+                                if(valUsuario2 >= 0 ){result += "y el segundo (" + valUsuario2 + ") es positivo";}
+                                else{result += "y el segundo (" + valUsuario2 + ") es negativo";}
+
+                                document.getElementById("ValEj64").innerHTML = "Solución: " + result;
+                                break;
+                            }
+                        }
+                    }
+                }
+            </script>
+        </div>
+
+
+        <div >
+            <p><strong>Ejercicio: 65 Referencia: 21</strong><BR><br><em>Escriba un programa JavaScript para crear una nueva cadena agregando "Py" delante de una cadena dada. Si la cadena dada comienza con "Py", devuelve la cadena original.</em></p>
+            <pre>
+                function <strong>AddPy</strong>()
+                {
+                    var result;
+                    var mensaje1 = "Introduzca el primer número";
+                    document.getElementById("ValEj65").innerHTML = "Solución: ";
+                    while (valUsuario1 == undefined || valUsuario1=="")
+                    {
+                        if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario1 == null | valUsuario1 ==  "") {
+                            document.getElementById("ValEj64").innerHTML = "Solución: El usuario no seleccionó ningún valor." ;
+                            break;}
+                        
+                        var patt1 = /\bPy/;
+                        var posicion =  valUsuario1.search(patt1);
+                        if (posicion == 0){
+                            result=valUsuario1;
+                            }
+                        else{
+                            result="Py"+valUsuario1;
+                            }
+                        document.getElementById("ValEj65").innerHTML = "Solución: " + result;
+                        break;
+                    }                  
+                } 
+            </pre>
+
+            <strong><p id="ValEj65">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="AddPy()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+                function AddPy() 
+                {
+                    var result;
+                    var mensaje1 = "Introduzca el primer número";
+                    document.getElementById("ValEj65").innerHTML = "Solución: ";
+                    while (valUsuario1 == undefined || valUsuario1=="")
+                    {
+                        if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario1 == null | valUsuario1 ==  "") {
+                            document.getElementById("ValEj65").innerHTML = "Solución: El usuario no seleccionó ningún valor." ;
+                            break;}
+                        
+                        var patt1 = /\bPy/;
+                        var posicion =  valUsuario1.search(patt1);
+                        if (posicion == 0){
+                            result=valUsuario1;
+                            }
+                        else{
+                            result="Py"+valUsuario1;
+                            }
+                        document.getElementById("ValEj65").innerHTML = "Solución: " + result;
+                        break;
+                    }
+                }
+            </script>
+        </div>
+
+
+        <div >
+            <p><strong>Ejercicio: 66 Referencia: 22</strong><BR><br><em>Escriba un programa JavaScript para eliminar un carácter en la posición especificada de una cadena dada y devolver la nueva cadena.</em></p>
+            <pre>
+                function <strong>DelChar</strong>()
+                {
+                    var result;
+                    var cadena;
+                    var mensaje1 = "Introduzca una cadena";
+                    var mensaje2 = "Introduzca la posición del caracter que quiere eliminar";
+                    document.getElementById("ValEj66").innerHTML = "Solución: ";
+                    while (valUsuario1 == undefined || valUsuario1=="" || valUsuario2 == null || valUsuario2 ==  "")
+                    {
+                        if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario1 == null || valUsuario1 ==  "") {
+                            document.getElementById("ValEj66").innerHTML = "Solución: El usuario no seleccionó ninguna cadena." ;
+                            break;
+                        }
+                        var valUsuario2 = prompt(mensaje2);
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario2 == null || valUsuario2 ==  "") {
+                        document.getElementById("ValEj66").innerHTML = "Solución: El usuario no seleccionó ninguna posición." ;
+                        break;
+                        }
+
+                        valUsuario2 = Number(valUsuario2);
+                        if(isNaN(valUsuario2)){
+                                valUsuario2= "";
+                                mensaje = "El valor de la posición introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                            }
+
+                        else{
+
+                            result = valUsuario1.slice(0,valUsuario2);
+                            result += valUsuario1.slice(valUsuario2 + 1,valUsuario1.length);
+
+                            document.getElementById("ValEj66").innerHTML = "Solución: " + result;
+                            break;
+                        }
+                    }
+                } 
+            </pre>
+
+            <strong><p id="ValEj66">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="DelChar()"/>
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+                function DelChar() 
+                {
+                    var result;
+                    var cadena;
+                    var mensaje1 = "Introduzca una cadena";
+                    var mensaje2 = "Introduzca la posición del caracter que quiere eliminar";
+                    document.getElementById("ValEj66").innerHTML = "Solución: ";
+                    while (valUsuario1 == undefined || valUsuario1=="" || valUsuario2 == null || valUsuario2 ==  "")
+                    {
+                        if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario1 == null || valUsuario1 ==  "") {
+                            document.getElementById("ValEj66").innerHTML = "Solución: El usuario no seleccionó ninguna cadena." ;
+                            break;
+                        }
+                        var valUsuario2 = prompt(mensaje2);
+
+                        //Si el usuario pulsa cancelar salimos
+                        if(valUsuario2 == null || valUsuario2 ==  "") {
+                        document.getElementById("ValEj66").innerHTML = "Solución: El usuario no seleccionó ninguna posición." ;
+                        break;
+                        }
+
+                        valUsuario2 = Number(valUsuario2);
+                        if(isNaN(valUsuario2)){
+                                valUsuario2= "";
+                                mensaje = "El valor de la posición introducido no es valido vuelva a intentarlo. Cancelar para Salir";
+                            }
+
+                        else{
+
+                            result = valUsuario1.slice(0,valUsuario2);
+                            result += valUsuario1.slice(valUsuario2 + 1,valUsuario1.length);
+
+                            document.getElementById("ValEj66").innerHTML = "Solución: " + result;
+                            break;
+                        }
+                    }
+                }
+            </script>
+        </div>
+    </body>
+
+    <div >
+        <p><strong>Ejercicio: 67 Referencia: 23</strong><BR><br><em>Escriba un programa JavaScript para crear una nueva cadena a partir de una cadena dada cambiando la posición del primer y último carácter. La longitud de la cadena debe ser mayor o igual a 1.</em></p>
+        <pre>
+            function <strong>DelChar</strong>()
+            {
+                var result;
+                var mensaje1 = "Introduzca un texto";
+                document.getElementById("ValEj67").innerHTML = "Solución: ";
+                while (valUsuario1 == undefined || valUsuario1=="" )
+                {
+                    if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                    //Si el usuario pulsa cancelar salimos
+                    if(valUsuario1 == null || valUsuario1 ==  "") {
+                        document.getElementById("ValEj67").innerHTML = "Solución: El usuario no seleccionó ningún texto." ;
+                        break;
+                    }
+                    
+                    result =valUsuario1.substr(valUsuario1.length-1,1) + valUsuario1.substr(1,valUsuario1.length-2) + valUsuario1.substr(0,1);
+
+                    document.getElementById("ValEj67").innerHTML = "Solución: " + result;
+                    break;
+                }
+            } 
+        </pre>
+
+        <strong><p id="ValEj67">Solución:</p></strong>
+        <input type="button" value="Ejecutar" name="Exe" onclick="ReplaceString()"/>
+        <br>
+        <br>
+        <hr>
+        
+        <script>
+            function ReplaceString() 
+            {
+                var result;
+                var mensaje1 = "Introduzca un texto";
+                document.getElementById("ValEj67").innerHTML = "Solución: ";
+                while (valUsuario1 == undefined || valUsuario1=="" )
+                {
+                    if (valUsuario1 == undefined || valUsuario1 == ""){var valUsuario1 = prompt(mensaje1);}
+
+                    //Si el usuario pulsa cancelar salimos
+                    if(valUsuario1 == null || valUsuario1 ==  "") {
+                        document.getElementById("ValEj67").innerHTML = "Solución: El usuario no seleccionó ningún texto." ;
+                        break;
+                    }
+                    
+                    result =valUsuario1.substr(valUsuario1.length-1,1) + valUsuario1.substr(1,valUsuario1.length-2) + valUsuario1.substr(0,1);
+
+                    document.getElementById("ValEj67").innerHTML = "Solución: " + result;
+                    break;
+                }
+            }
+        </script>
+    </div>
+
+
+</html>
