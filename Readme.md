@@ -13,11 +13,12 @@ El grupo tiene que realizar los ejercicios del 38 - 75 ambos incluidos. Yo he re
 
 Todos los ejercicios están en una sola página HTML y tienen las siguientes características:
 
-- Cada uno de ellos esta en un bloque <div>.
-- Cada uno de ellos tiene un botón Ejecutar, que ejecuta el JavaScript del ejercicio y que muestra el resultado en un un elemento <p> 
+- Cada uno de ellos esta en un bloque div.
+- Cada uno de ellos tiene un botón Ejecutar, que ejecuta el JavaScript del ejercicio y que muestra el resultado en un elemento tipo parrafo (p) 
 - Los ejercicios que necesitan de algún dato se piden por pantalla utilizando un prompt()
 - Se ha hecho la validación de los datos que el usuario introducido, es decir si se espera un número se valida que el usuario haya introducido un número. En caso de que no se cumpla la condición se le vuelve a pedir al usuario que introduzca el dato mostrándole un mensaje parecido a este mensaje: *El valor introducido no es valido vuelva a intentarlo. Cancelar para Salir*
 - Si el usuario no introduce nada se muestra en pantalla el mensaje: *El usuario no seleccionó ningún valor.* y el programa finaliza
+
 
 
 
