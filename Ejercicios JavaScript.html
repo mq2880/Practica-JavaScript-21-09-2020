@@ -6,11 +6,1094 @@
         <title>Document</title>
         <style>
             p{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+            input{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+            button{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+            label{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
         </style>
     </head>
     <body>
+        
+        <script>
+            function OcultarMostrar(NombreElemento)
+            {
+                
+                if (document.getElementById(NombreElemento).style.display == "none")
+                {
+                    document.getElementById(NombreElemento).style.display = "initial"
+                    
+                }   
+                else
+                {
+                    document.getElementById(NombreElemento).style.display = "none"
+                }             
+            }
+        </script>
+        
+        
+
         <div>
-            <p><strong>Ejercicio: 60 Referencia: 16</strong><BR><br><em> Escriba un programa JavaScript para calcular la diferencia absoluta entre un número especificado y 19. Devuelve el triple de su diferencia absoluta si el número especificado es mayor que 19.</em></p>
+            <p><strong>Ejercicio: 38 Referencia: 132 Realizado por: Miguel Angel Cabreo Luego</strong><BR><br><em>Escriba un programa JavaScript para encontrar todos los factores primos distintos de un entero dado.</em></p>
+            <pre>
+                function obtenerResultado_mac_ejer38()
+                {
+                    let numero_mac_ejer38 = document.getElementById("numero_mac_ejer38").value;
+                    numero_mac_ejer38 = numero_mac_ejer38 *1;
+                    if (!Number.isInteger(numero_mac_ejer38))
+                    {
+                        alert("El número introducido no es un valor entero");
+                        return false;
+                    }
+                    factoresPrimos_mac_ejer38 = [];
+                    for (let index = numero_mac_ejer38; index >0; index--) {
+                        
+                        if ((numero_mac_ejer38%index)==0)
+                        {
+                            //index es un factor primo del valor introducido
+                            factoresPrimos_mac_ejer38.push(index);
+                        }
+                    }
+                    mostrarResultado_mac_ejer38(numero_mac_ejer38);
+                    document.getElementById("numero_mac_ejer38").value="";
+                    document.getElementById("numero_mac_ejer38").focus();
+                }
+                function mostrarResultado_mac_ejer38(numero)
+                {
+                    document.getElementById("resultados_mac_ejer38").innerHTML = ''; 
+                    if (factoresPrimos_mac_ejer38.length==0)
+                    {
+                        document.getElementById("resultados_mac_ejer38").innerHTML = "&lt;p&gt;El número " + numero + " no tiene factores primos.&lt;/p&gt;";
+                    }
+                    else
+                    {
+                        let linea = "&lt;p&gt;El número " + numero + " tiene los siguientes factores primos:&lt;p&gt;";
+                        for (let index = 0; index &lt; factoresPrimos_mac_ejer38.length; index++) 
+                        {
+                            const element = factoresPrimos_mac_ejer38[index];
+                            linea += "&lt;p&gt;" + element + "&lt;p&gt;";                
+                        }
+                        document.getElementById("resultados_mac_ejer38").innerHTML = linea;
+                    }
+                    
+                }
+                }
+            </pre>
+
+            <p>En teoría de números, los factores primos de un número entero son los números primos divisores exactos de ese número entero. El proceso de búsqueda de esos divisores se denomina factorización de enteros, o factorización en números primos.</p>
+            <label for="Eje">Introduzca número entero:</label>
+            <input type="number" id="numero_mac_ejer38" autofocus style="width: 50px;">
+            <button type="button" value="Data" onclick="obtenerResultado_mac_ejer38();">Obtener primos</button>
+            <div id="resultados_mac_ejer38"></div>
+            <br>
+            <br>
+            <hr>
+
+            <script>
+                let factoresPrimos_mac_ejer38 = []; //Aquí introducimos el resultado
+                function obtenerResultado_mac_ejer38()
+                {
+                    let numero_mac_ejer38 = document.getElementById("numero_mac_ejer38").value;
+                    numero_mac_ejer38 = numero_mac_ejer38 *1;
+                    if (!Number.isInteger(numero_mac_ejer38))
+                    {
+                        alert("El número introducido no es un valor entero");
+                        return false;
+                    }
+                    factoresPrimos_mac_ejer38 = [];
+                    for (let index = numero_mac_ejer38; index >0; index--) {
+                        
+                        if ((numero_mac_ejer38%index)==0)
+                        {
+                            //index es un factor primo del valor introducido
+                            factoresPrimos_mac_ejer38.push(index);
+                        }
+                    }
+                    mostrarResultado_mac_ejer38(numero_mac_ejer38);
+                    document.getElementById("numero_mac_ejer38").value="";
+                    document.getElementById("numero_mac_ejer38").focus();
+                }
+                function mostrarResultado_mac_ejer38(numero)
+                {
+                    document.getElementById("resultados_mac_ejer38").innerHTML = ''; 
+                    if (factoresPrimos_mac_ejer38.length==0)
+                    {
+                        document.getElementById("resultados_mac_ejer38").innerHTML = "<p>El número " + numero + " no tiene factores primos.</p>";
+                    }
+                    else
+                    {
+                        let linea = "<p>El número " + numero + " tiene los siguientes factores primos:<p>";
+                        for (let index = 0; index < factoresPrimos_mac_ejer38.length; index++) 
+                        {
+                            const element = factoresPrimos_mac_ejer38[index];
+                            linea += "<p>" + element + "<p>";                
+                        }
+                        document.getElementById("resultados_mac_ejer38").innerHTML = linea;
+                    }
+                    
+                }
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 39 Referencia: 133 Realizado por: Miguel Angel Cabreo Luego</strong><BR><br><em>Escriba un programa JavaScript para verificar si una fracción dada es apropiada o no. Nota: Hay dos tipos de fracciones comunes, propias o impropias. Cuando el numerador y el denominador son positivos, la fracción se llama propia si el numerador es menor que el denominador y, en caso contrario, impropia.</em></p>
+            <pre>
+                function obtenerResultado_mac_ejer39()
+                {
+                    document.getElementById("resultados_mac_ejer39").innerHTML = "";
+                    //obtenemos valores iniciales
+                    let numerador_mac_ejer39 = document.getElementById("numerador_mac_ejer39").value;
+                    numerador_mac_ejer39 = numerador_mac_ejer39 *1;
+                    let denominador_mac_ejer39 = document.getElementById("denominador_mac_ejer39").value;
+                    denominador_mac_ejer39 = denominador_mac_ejer39 *1;
+        
+                    if (!validarValoresIntroducidos_mac_ejer39(numerador_mac_ejer39,denominador_mac_ejer39))
+                    {
+                        return false;            
+                    }
+                    
+                    //Proceso principal
+                    if (numerador_mac_ejer39&lt;denominador_mac_ejer39)
+                    {
+                        document.getElementById("resultados_mac_ejer39").innerHTML = "&lt;p&gt;la fracción " + numerador_mac_ejer39 + "/" + denominador_mac_ejer39 + " es &lt;strong&gt;PROPIA&lt;/strong&gt;&lt;/p&gt;";
+                    }
+                    else
+                    {
+                        document.getElementById("resultados_mac_ejer39").innerHTML = "&lt;p&gt;la fracción " + numerador_mac_ejer39 + "/" + denominador_mac_ejer39 + " es &lt;strong&gt;IMPROPIA&lt;/strong&gt;&lt;/p&gt;";
+                    }
+                    
+                    //Reinicia valores del formulario
+                    reiniciaFormulario_mac_ejer39();
+                }    
+                function validarValoresIntroducidos_mac_ejer39(numerador_mac_ejer39,denominador_mac_ejer39)
+                {
+                    if (!Number.isInteger(numerador_mac_ejer39))
+                    {
+                        alert("El numerador no es un valor entero");
+                        return false;
+                    }
+                    if (!Number.isInteger(denominador_mac_ejer39))
+                    {
+                        alert("El denominador no es un valor entero");
+                        return false;
+                    }
+                    if (denominador_mac_ejer39&lt;0)
+                    {
+                        alert("El denominador no es un valor positivo");
+                        return false;
+                    }
+                    if (numerador_mac_ejer39&lt;0)
+                    {
+                        alert("El numerador no es un valor positivo");
+                        return false;
+                    }
+                    return true;
+                }
+                function reiniciaFormulario_mac_ejer39()
+                {
+                    document.getElementById("numerador_mac_ejer39").value="";
+                    document.getElementById("denominador_mac_ejer39").value="";
+                    document.getElementById("numerador_mac_ejer39").focus();
+                }
+            </pre>
+
+            <p>Hay dos tipos de fracciones comunes, propias o impropias. Cuando el numerador y el denominador son positivos, la fracción se llama propia si el numerador es menor que el denominador y, en caso contrario, impropia.</p>
+            <label for="Eje">Introduzca numerador:</label>
+            <input type="number" id="numerador_mac_ejer39" autofocus>
+            <label for="Eje">Introduzca denominador:</label>
+            <input type="number" id="denominador_mac_ejer39" >
+            <button type="button" value="Data" onclick="obtenerResultado_mac_ejer39();">Obtener resultado</button>
+            <div id="resultados_mac_ejer39"></div>
+        
+            <script>
+                function obtenerResultado_mac_ejer39()
+                {
+                    document.getElementById("resultados_mac_ejer39").innerHTML = "";
+                    //obtenemos valores iniciales
+                    let numerador_mac_ejer39 = document.getElementById("numerador_mac_ejer39").value;
+                    numerador_mac_ejer39 = numerador_mac_ejer39 *1;
+                    let denominador_mac_ejer39 = document.getElementById("denominador_mac_ejer39").value;
+                    denominador_mac_ejer39 = denominador_mac_ejer39 *1;
+        
+                    if (!validarValoresIntroducidos_mac_ejer39(numerador_mac_ejer39,denominador_mac_ejer39))
+                    {
+                        return false;            
+                    }
+                    
+                    //Proceso principal
+                    if (numerador_mac_ejer39<denominador_mac_ejer39)
+                    {
+                        document.getElementById("resultados_mac_ejer39").innerHTML = "<p>la fracción " + numerador_mac_ejer39 + "/" + denominador_mac_ejer39 + " es <strong>PROPIA</strong></p>";
+                    }
+                    else
+                    {
+                        document.getElementById("resultados_mac_ejer39").innerHTML = "<p>la fracción " + numerador_mac_ejer39 + "/" + denominador_mac_ejer39 + " es <strong>IMPROPIA</strong></p>";
+                    }
+                    
+                    //Reinicia valores del formulario
+                    reiniciaFormulario_mac_ejer39();
+                }    
+                function validarValoresIntroducidos_mac_ejer39(numerador_mac_ejer39,denominador_mac_ejer39)
+                {
+                    if (!Number.isInteger(numerador_mac_ejer39))
+                    {
+                        alert("El numerador no es un valor entero");
+                        return false;
+                    }
+                    if (!Number.isInteger(denominador_mac_ejer39))
+                    {
+                        alert("El denominador no es un valor entero");
+                        return false;
+                    }
+                    if (denominador_mac_ejer39<0)
+                    {
+                        alert("El denominador no es un valor positivo");
+                        return false;
+                    }
+                    if (numerador_mac_ejer39<0)
+                    {
+                        alert("El numerador no es un valor positivo");
+                        return false;
+                    }
+                    return true;
+                }
+                function reiniciaFormulario_mac_ejer39()
+                {
+                    document.getElementById("numerador_mac_ejer39").value="";
+                    document.getElementById("denominador_mac_ejer39").value="";
+                    document.getElementById("numerador_mac_ejer39").focus();
+                }
+            </script>
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 40 Referencia: 133 Realizado por: Miguel Angel Cabreo Luego</strong><BR><br><em>Escriba un programa JavaScript para cambiar los caracteres (minúsculas) en una cadena donde a se convierte en z, b se convierte en y, c se convierte en x, ..., n se convierte en m, m se convierte en n, ... , z se convierte en a.</em></p>
+            <pre>
+                function obtenerResultado_mac_ejer40()
+                {
+                    //limpiamos el área de resultados_mac_ejer40
+                    document.getElementById("resultados_mac_ejer40").innerHTML = "";
+                    
+                    //obtenemos valores iniciales
+                    let texto_mac_ejer40 = document.getElementById("texto_mac_ejer40").value;
+                    texto_mac_ejer40=texto_mac_ejer40.toLowerCase();
+
+                    //Proceso principal
+                    let nuevotexto_mac_ejer40 ='';
+                    for (let index = 0; index &lt texto_mac_ejer40.length; index++) {
+                        const letra = texto_mac_ejer40[index];
+                        asciiLetra = letra.charCodeAt(0);
+                        if (letra == 'z')
+                        {
+                            nuevotexto_mac_ejer40 +='a';
+                        }
+                        else
+                        {
+                            nuevotexto_mac_ejer40 +=String.fromCharCode(asciiLetra+1); 
+                        }
+                    }
+                    let linea = "&lt;p&gt;texto original:  " + texto_mac_ejer40 + "&lt;p&gt;";
+                    linea += "&lt;p&gt;Nuevo texto:  " + nuevotexto_mac_ejer40 + "&lt;p&gt;";        
+                    document.getElementById("resultados_mac_ejer40").innerHTML = linea;
+                }    
+
+            </pre>
+
+            <label for="Eje">Introduzca texto:</label>
+            <input type="text" id="texto_mac_ejer40" required autofocus>
+            <button type="button" value="Data" onclick="obtenerResultado_mac_ejer40();">Obtener resultado</button>
+            <div id="resultados_mac_ejer40"></div>
+            <br><br>
+            <hr>
+            <script>
+                function obtenerResultado_mac_ejer40()
+                {
+                    //limpiamos el área de resultados_mac_ejer40
+                    document.getElementById("resultados_mac_ejer40").innerHTML = "";
+                    
+                    //obtenemos valores iniciales
+                    let texto_mac_ejer40 = document.getElementById("texto_mac_ejer40").value;
+                    texto_mac_ejer40=texto_mac_ejer40.toLowerCase();
+
+                    //Proceso principal
+                    let nuevotexto_mac_ejer40 ='';
+                    for (let index = 0; index < texto_mac_ejer40.length; index++) {
+                        const letra = texto_mac_ejer40[index];
+                        asciiLetra = letra.charCodeAt(0);
+                        if (letra == 'z')
+                        {
+                            nuevotexto_mac_ejer40 +='a';
+                        }
+                        else
+                        {
+                            nuevotexto_mac_ejer40 +=String.fromCharCode(asciiLetra+1); 
+                        }
+                    }
+                    let linea = "<p>texto original:  " + texto_mac_ejer40 + "</p>";
+                    linea += "<p>Nuevo texto:  " + nuevotexto_mac_ejer40 + "</p>";        
+                    document.getElementById("resultados_mac_ejer40").innerHTML = linea;
+                }    
+
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 41 Referencia: 135 Realizado por: Miguel Angel Cabreo Luego</strong><BR><br><em>Escriba un programa JavaScript para eliminar todos los caracteres de una cadena determinada que aparezcan más de una vez.</em></p>
+            <pre>
+                function obtenerResultado_mac_ejer41()
+                {
+                    //limpiamos el área de resultados_mac_ejer41
+                    document.getElementById("resultados_mac_ejer41").innerHTML = "";
+                    
+                    //obtenemos valores iniciales
+                    let texto_mac_ejer41 = document.getElementById("texto_mac_ejer41").value;        
+        
+                    //Proceso principal
+                    let nuevotexto_mac_ejer41 ='';
+                    for (let index = 0; index &lt; texto_mac_ejer41.length; index++) 
+                    {
+                        let letraActual = texto_mac_ejer41[index];
+                        if (nuevotexto_mac_ejer41.indexOf(letraActual)&lt;0)
+                        {
+                            nuevotexto_mac_ejer41 += letraActual;
+                        }            
+                    }
+                    let linea = "&lt;p&gt;texto original:  " + texto_mac_ejer41 + "&lt;/p&gt;";
+                    linea += "&lt;p&gt;Nuevo texto:  " + nuevotexto_mac_ejer41 + "&lt;/p&gt;";        
+                    document.getElementById("resultados_mac_ejer41").innerHTML = linea;
+                }    
+            </pre>
+    
+            <label for="Eje">Introduzca </label>
+            <input type="text" id="texto_mac_ejer41" required autofocus>
+            <button type="button" value="Data" onclick="obtenerResultado_mac_ejer41();">Obtener resultado</button>
+            <div id="resultados_mac_ejer41"></div>
+            <script>        
+                function obtenerResultado_mac_ejer41()
+                {
+                    //limpiamos el área de resultados_mac_ejer41
+                    document.getElementById("resultados_mac_ejer41").innerHTML = "";
+                    
+                    //obtenemos valores iniciales
+                    let texto_mac_ejer41 = document.getElementById("texto_mac_ejer41").value;        
+        
+                    //Proceso principal
+                    let nuevotexto_mac_ejer41 ='';
+                    for (let index = 0; index < texto_mac_ejer41.length; index++) 
+                    {
+                        let letraActual = texto_mac_ejer41[index];
+                        if (nuevotexto_mac_ejer41.indexOf(letraActual)<0)
+                        {
+                            nuevotexto_mac_ejer41 += letraActual;
+                        }            
+                    }
+                    let linea = "<p>texto original:  " + texto_mac_ejer41 + "</p>";
+                    linea += "<p>Nuevo texto:  " + nuevotexto_mac_ejer41 + "</p>";        
+                    document.getElementById("resultados_mac_ejer41").innerHTML = linea;
+                }    
+            </script>
+            <br>
+            <br>
+            <hr>
+        </div>
+    
+        <div>
+            <p><strong>Ejercicio: 42 Referencia: 136 Realizado por: Miguel Angel Cabreo Luego</strong><BR><br><em>Escriba un programa JavaScript para reemplazar el primer dígito de una cadena (debe contener al menos un dígito) con el carácter $.</em></p>
+                <pre>
+                    function obtenerResultado_mac_ejer42()
+                    {
+                        //limpiamos el área de resultados_mac_ejer42
+                        document.getElementById("resultados_mac_ejer42").innerHTML = "";
+                        
+                        //obtenemos valores iniciales
+                        let texto_mac_ejer42 = document.getElementById("texto_mac_ejer42").value;
+                        texto_mac_ejer42 = texto_mac_ejer42.trim();
+                        if (texto_mac_ejer42.length==0)
+                        {
+                            alert("El texto debe contener al menos un dígito");
+                            document.getElementById("texto_mac_ejer42").focus;
+                            return false;
+                        }
+            
+                        //Proceso principal
+                        let nuevotexto_mac_ejer42 ="$" + texto_mac_ejer42.substring(1);
+                        
+                        let linea = "&lt;p&gt;texto original:  " + texto_mac_ejer42 + "&lt;/p&gt;";
+                        linea += "&lt;p&gt;Nuevo texto:  " + nuevotexto_mac_ejer42 + "&lt;/p&gt;";        
+                        document.getElementById("resultados_mac_ejer42").innerHTML = linea;
+                    }    
+                </pre>
+                <label for="Eje">Introduzca texto:</label>
+                <input type="text" id="texto_mac_ejer42" required autofocus>
+                <button type="button" value="Data" onclick="obtenerResultado_mac_ejer42();">Obtener resultado</button>
+                <div id="resultados_mac_ejer42"></div>
+            
+                <script>    
+                    function obtenerResultado_mac_ejer42()
+                    {
+                        //limpiamos el área de resultados_mac_ejer42
+                        document.getElementById("resultados_mac_ejer42").innerHTML = "";
+                        
+                        //obtenemos valores iniciales
+                        let texto_mac_ejer42 = document.getElementById("texto_mac_ejer42").value;
+                        texto_mac_ejer42 = texto_mac_ejer42.trim();
+                        if (texto_mac_ejer42.length==0)
+                        {
+                            alert("El texto debe contener al menos un dígito");
+                            document.getElementById("texto_mac_ejer42").focus;
+                            return false;
+                        }
+            
+                        //Proceso principal
+                        let nuevotexto_mac_ejer42 ="$" + texto_mac_ejer42.substring(1);
+                        
+                        let linea = "<p>texto original:  " + texto_mac_ejer42 + "</p>";
+                        linea += "<p>Nuevo texto:  " + nuevotexto_mac_ejer42 + "</p>";        
+                        document.getElementById("resultados_mac_ejer42").innerHTML = linea;
+                    }    
+                </script>
+            <br>
+            <br>
+            <hr>
+        </div>
+    
+        <div>
+            <p ><strong>Ejercicio: 43 Referencia: 137 Realizado por: Miguel Angel Cabreo Luego</strong><BR><br><em>Escriba un programa JavaScript para probar si un entero dado es mayor que 15, devuelva el número dado; de lo contrario, devuelva 15.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                    function obtenerResultado_mac_ejer43()
+                    {
+                        let numero_mac_ejer43 = document.getElementById("numero_mac_ejer43").value;
+                        numero_mac_ejer43 = numero_mac_ejer43 *1;
+                        if (!Number.isInteger(numero_mac_ejer43))
+                        {
+                            alert("El número introducido no es un valor entero");
+                            return false;
+                        }
+                        let linea = "El número introducido ["+ numero_mac_ejer43 + "] es menor o igual a 15";
+                        if (numero_mac_ejer43>15)
+                        {
+                            linea = "El número introducido ["+ numero_mac_ejer43 + "] es mayor que 15";
+                        }
+                        document.getElementById("resultados_mac_ejer43").innerHTML = linea;       
+                }
+            </pre>
+            <label for="Eje">Introduzca número entero:</label>
+            <input type="number" id="numero_mac_ejer43" autofocus style="width: 50px;">
+            <button type="button" value="Data" onclick="obtenerResultado_mac_ejer43();">Obtener resultado</button>
+            <div id="resultados_mac_ejer43"></div>
+            <script>
+                let factoresPrimos = []; //Aquí introducimos el resultado
+                function obtenerResultado_mac_ejer43()
+                {
+                    let numero_mac_ejer43 = document.getElementById("numero_mac_ejer43").value;
+                    numero_mac_ejer43 = numero_mac_ejer43 *1;
+                    if (!Number.isInteger(numero_mac_ejer43))
+                    {
+                        alert("El número introducido no es un valor entero");
+                        return false;
+                    }
+                    let linea = "El número introducido ["+ numero_mac_ejer43 + "] es menor o igual a 15";
+                    if (numero_mac_ejer43>15)
+                    {
+                        linea = "El número introducido ["+ numero_mac_ejer43 + "] es mayor que 15";
+                    }
+                    document.getElementById("resultados_mac_ejer43").innerHTML = linea;        
+                }
+            </script>            
+            <br>
+            <br>
+            <hr>
+            <script>
+            </script>
+        </div>
+        
+        <div id="44">
+            <p><strong>Ejercicio: 44 Referencia: 138 Realizado por: Miguel Angel Cabreo Luego</strong><BR><br><em>Escriba un programa JavaScript para invertir los bits de un entero corto sin signo de 16 bits dado.</em></p>
+                <pre>
+                    function <strong>CalcularNumero() </strong>
+                    {
+                        let factoresPrimos = []; //Aquí introducimos el resultado
+                        function obtenerResultado_mac_ejer44()
+                        {
+                            let numero_mac_ejer44 = document.getElementById("numero_mac_ejer44").value;
+                            numero_mac_ejer44 = numero_mac_ejer44 *1;
+                            if (!Number.isInteger(numero_mac_ejer44))
+                            {
+                                alert("El número introducido no es un valor entero");
+                                return false;
+                            }
+                            if (numero_mac_ejer44&lt;0)
+                            {
+                                alert("El número debe ser positivo");
+                                return false;
+                            }
+    
+                            if (numero_mac_ejer44>32767)
+                            {
+                                alert("El número debe ser entero positivo de 16 bits y no puede superar el valor 32767");
+                                return false;
+                            }
+    
+                            let binario =  convertDecimalToBinary(numero_mac_ejer44);
+                            
+                            binarioInvertido =  (invertirBinario(binario));
+                            numero_mac_ejer44invertido = binaryToDecimal(binarioInvertido);
+    
+                            let linea = "&lt;p&gt;El número introducido ["+ numero_mac_ejer44 + "] en binario es [" + binario + "]&lt;/p&gt;";
+                            linea += "&lt;p&gt;El número invertido es ["+ numero_mac_ejer44invertido + "] en binario es [" + binarioInvertido + "]&lt;/p&gt;";
+                            
+                            
+                            document.getElementById("resultados_mac_ejer44").innerHTML = linea;        
+                        }
+                        
+    
+    
+                        function invertirBinario(numero_mac_ejer44)
+                        {
+                            
+                            let nuevonumero_mac_ejer44="";
+                            for (let index = 0; index &lt; numero_mac_ejer44.length; index++) {
+                                if (numero_mac_ejer44[index]=='1')
+                                {
+                                    nuevonumero_mac_ejer44 += '0';
+                                }
+                                else{
+                                    nuevonumero_mac_ejer44 += '1';
+                                }
+                            }
+                            return nuevonumero_mac_ejer44;
+                        }
+    
+                        function binaryToDecimal(binaryNumber)
+                        {
+                            var total = 0;
+                            for(var i = 0; i &lt; binaryNumber.length; i++){
+                                var bit = binaryNumber.charAt(binaryNumber.length - (i + 1 ));
+                                if(bit == 1){
+                                    var temp = Math.pow(2, i* parseInt(bit));
+                                    total += temp;
+                                }
+                            }
+    
+                            return total;
+                        }
+    
+                        function convertDecimalToBinary(number)
+                        {
+                            var binary = "";
+                            var temp = number;
+                        
+                            while(temp > 0){
+                                if(temp % 2 == 0){
+                                    binary = "0" + binary;
+                                }
+                                else {
+                                    binary = "1" + binary;
+                                }
+    
+                                temp = Math.floor(temp / 2);
+                            }
+    
+                            return binary;
+                        }
+    
+                    }
+                </pre>
+        
+                <label for="Eje">Introduzca número entero:</label>
+                <input type="number" id="numero_mac_ejer44" autofocus style="width: 50px;">
+                <button type="button" value="Data" onclick="obtenerResultado_mac_ejer44();">Obtener</button>
+                <div id="resultados_mac_ejer44"></div>
+                <br>
+                <br>
+                <hr>
+                <script>
+                    let factoresPrimos = []; //Aquí introducimos el resultado
+                    function obtenerResultado_mac_ejer44()
+                    {
+                        let numero_mac_ejer44 = document.getElementById("numero_mac_ejer44").value;
+                        numero_mac_ejer44 = numero_mac_ejer44 *1;
+                        if (!Number.isInteger(numero_mac_ejer44))
+                        {
+                            alert("El número introducido no es un valor entero");
+                            return false;
+                        }
+                        if (numero_mac_ejer44<0)
+                        {
+                            alert("El número debe ser positivo");
+                            return false;
+                        }
+
+                        if (numero_mac_ejer44>32767)
+                        {
+                            alert("El número debe ser entero positivo de 16 bits y no puede superar el valor 32767");
+                            return false;
+                        }
+
+                        let binario =  convertDecimalToBinary(numero_mac_ejer44);
+                        
+                        binarioInvertido =  (invertirBinario(binario));
+                        numero_mac_ejer44invertido = binaryToDecimal(binarioInvertido);
+
+                        let linea = "<p>El número introducido ["+ numero_mac_ejer44 + "] en binario es [" + binario + "]</p>";
+                        linea += "<p>El número invertido es ["+ numero_mac_ejer44invertido + "] en binario es [" + binarioInvertido + "]</p>";
+                        
+                        
+                        document.getElementById("resultados_mac_ejer44").innerHTML = linea;        
+                    }
+                    
+
+
+                    function invertirBinario(numero_mac_ejer44)
+                    {
+                        
+                        let nuevonumero_mac_ejer44="";
+                        for (let index = 0; index < numero_mac_ejer44.length; index++) {
+                            if (numero_mac_ejer44[index]=='1')
+                            {
+                                nuevonumero_mac_ejer44 += '0';
+                            }
+                            else{
+                                nuevonumero_mac_ejer44 += '1';
+                            }
+                        }
+                        return nuevonumero_mac_ejer44;
+                    }
+
+                    function binaryToDecimal(binaryNumber)
+                    {
+                        var total = 0;
+                        for(var i = 0; i < binaryNumber.length; i++){
+                            var bit = binaryNumber.charAt(binaryNumber.length - (i + 1 ));
+                            if(bit == 1){
+                                var temp = Math.pow(2, i* parseInt(bit));
+                                total += temp;
+                            }
+                        }
+
+                        return total;
+                    }
+
+                    function convertDecimalToBinary(number)
+                    {
+                        var binary = "";
+                        var temp = number;
+                    
+                        while(temp > 0){
+                            if(temp % 2 == 0){
+                                binary = "0" + binary;
+                            }
+                            else {
+                                binary = "1" + binary;
+                            }
+
+                            temp = Math.floor(temp / 2);
+                        }
+
+                        return binary;
+                    }
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 45 Referencia: 139 Realizado por: Miguel Angel Cabreo Luego</strong><BR><br><em>Escriba un programa JavaScript para encontrar la posición de un número redondeado más a la derecha en una matriz de enteros. Devuelve 0 si no hay ningún número redondo. Nota: Un número redondo se considera informalmente como un número entero que termina con uno o más ceros.</em></p>
+            <pre>
+                let numero_mac_ejer45s = []; 
+                function reiniciar_mac_ejer45()
+                {
+                    numero_mac_ejer45s = []; 
+                    document.getElementById("resultados_mac_ejer45").innerHTML = "";       
+                    document.getElementById("numero_mac_ejer45").value = "";
+                    document.getElementById("numero_mac_ejer45").focus();
+                }
+                function Aniadirnumero_mac_ejer45()
+                {
+                    let numero_mac_ejer45 = document.getElementById("numero_mac_ejer45").value;
+                    numero_mac_ejer45Aux = numero_mac_ejer45 *1;
+                    if (!Number.isInteger(numero_mac_ejer45Aux))
+                    {
+                        alert("El número introducido no es un valor entero");
+                        return false;
+                    }
+                    numero_mac_ejer45s.push(numero_mac_ejer45);
+                    mostrarnumero_mac_ejer45s();
+                    document.getElementById("numero_mac_ejer45").value = "";
+                    document.getElementById("numero_mac_ejer45").focus();
+                }
+                function mostrarnumero_mac_ejer45s()
+                {   
+                    let linea = "&lt;p&gt;Números introducidos: ";
+                    for (let index = 0; index &lt; numero_mac_ejer45s.length; index++) 
+                    {
+                        const element = numero_mac_ejer45s[index];
+                        linea +=  element + " ";
+                    }    
+                    linea += "&lt;/p&gt;";
+
+                    document.getElementById("resultados_mac_ejer45").innerHTML = linea;
+                }
+                function obtenerResultado_mac_ejer45()
+                {
+                    let resultado ='0';
+                    for (let index = numero_mac_ejer45s.length-1; index >=0 ; index--) {
+                        const element = numero_mac_ejer45s[index];
+                        if (element[element.length-1]=='0')
+                        {
+                            resultado = element;
+                            break;
+                        }
+                    }
+                    
+                    let linea = document.getElementById("resultados_mac_ejer45").innerHTML ;
+                    
+                    if (resultado=='0')
+                    {
+                        linea += "&lt;p&gt;El array no tiene ningun número que finalice en 0&lt;/p&gt;";
+                    }
+                    else
+                    {
+                        linea += "&lt;p&gt;El número redondo más a la derecha del array de números es:" + resultado + "&lt;/p&gt;";
+                    }
+                    document.getElementById("resultados_mac_ejer45").innerHTML = linea;
+            </pre>
+    
+            <label for="Eje">Introduzca número entero:</label>
+            <input type="number" id="numero_mac_ejer45" autofocus style="width: 80px;">
+            <button type="button"  onclick="Aniadirnumero_mac_ejer45();">Añadir Número</button>
+            <button type="button" onclick="obtenerResultado_mac_ejer45();">Obtener</button>
+            <br>
+            <button type="button"  onclick="reiniciar_mac_ejer45();">reiniciar</button>
+            <div id="resultados_mac_ejer45"></div>
+
+            <script>
+                let numero_mac_ejer45s = []; 
+                function reiniciar_mac_ejer45()
+                {
+                    numero_mac_ejer45s = []; 
+                    document.getElementById("resultados_mac_ejer45").innerHTML = "";       
+                    document.getElementById("numero_mac_ejer45").value = "";
+                    document.getElementById("numero_mac_ejer45").focus();
+                }
+                function Aniadirnumero_mac_ejer45()
+                {
+                    let numero_mac_ejer45 = document.getElementById("numero_mac_ejer45").value;
+                    numero_mac_ejer45Aux = numero_mac_ejer45 *1;
+                    if (!Number.isInteger(numero_mac_ejer45Aux))
+                    {
+                        alert("El número introducido no es un valor entero");
+                        return false;
+                    }
+                    numero_mac_ejer45s.push(numero_mac_ejer45);
+                    mostrarnumero_mac_ejer45s();
+                    document.getElementById("numero_mac_ejer45").value = "";
+                    document.getElementById("numero_mac_ejer45").focus();
+                }
+                function mostrarnumero_mac_ejer45s()
+                {   
+                    let linea = "<p>Números introducidos: ";
+                    for (let index = 0; index < numero_mac_ejer45s.length; index++) 
+                    {
+                        const element = numero_mac_ejer45s[index];
+                        linea +=  element + " ";
+                    }    
+                    linea += "</p>";
+
+                    document.getElementById("resultados_mac_ejer45").innerHTML = linea;
+                }
+                function obtenerResultado_mac_ejer45()
+                {
+                    let resultado ='0';
+                    for (let index = numero_mac_ejer45s.length-1; index >=0 ; index--) {
+                        const element = numero_mac_ejer45s[index];
+                        if (element[element.length-1]=='0')
+                        {
+                            resultado = element;
+                            break;
+                        }
+                    }
+                    
+                    let linea = document.getElementById("resultados_mac_ejer45").innerHTML ;
+                    
+                    if (resultado=='0')
+                    {
+                        linea += "<p>El array no tiene ningun número que finalice en 0</p>";
+                    }
+                    else
+                    {
+                        linea += "<p>El número redondo más a la derecha del array de números es:" + resultado + "</p>";
+                    }
+                    document.getElementById("resultados_mac_ejer45").innerHTML = linea;
+                }
+            </script>
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 46 Referencia: 14 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em>Escriba un ejercicio de JavaScript para obtener la extensión de un nombre de archivo.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj46">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 47 Referencia: 140 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em>Escriba un programa JavaScript para comprobar si todos los dígitos de un número dado son iguales o no.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj47">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+        <div>
+            <p><strong>Ejercicio: 48 Referencia: 141 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em>Escriba un programa de JavaScript para encontrar la cantidad de elementos que se presentan en ambos arreglos dados.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj48">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 49 Referencia: 142 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em></em>Escriba un programa JavaScript para simplificar una ruta absoluta dada para un archivo en estilo Unix.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj49">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+
+        <div>
+            <p><strong>Ejercicio: 50 Referencia: 143 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em></em>Escriba un programa JavaScript para ordenar las cadenas de una matriz dada de cadenas en el orden de longitudes crecientes. Nota: No cambie el orden si las longitudes de dos cadenas  son iguales.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj50">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+
+        <div>
+            <p><strong>Ejercicio: 51 Referencia: 144 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em></em>Escriba un programa JavaScript para romper la dirección de una URL y poner su parte en una matriz. Nota: estructura de la URL: //.org [/] y es posible que no haya parte en la dirección.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj51">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 52 Referencia: 145 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em></em>Escriba un programa JavaScript para encontrar el número entero máximo n tal que 1 + 2 + ... + n &lt;= un número entero dado.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj52">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 53 Referencia: 146 Realizado por: Rubén García Jiménez</strong><BR><br><em></em>Escriba un programa JavaScript para calcular la suma de cubos de todos los enteros desde 1 hasta un entero dado.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj53">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 54 Referencia: 147 Realizado por: Rubén García Jiménez</strong><BR><br><em></em>Escriba un programa JavaScript para calcular la suma de todos los dígitos que ocurren en una cadena dada.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj54">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 55 Referencia: 148 Realizado por: Rubén García Jiménez</strong><BR><br><em></em>Escriba un programa JavaScript para intercambiar dos mitades de una matriz dada de enteros de longitud par.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj55">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 56 Referencia: 149 Realizado por: Rubén García Jiménez</strong><BR><br><em></em>Escriba un programa JavaScript para cambiar el uso de mayúsculas en todas las letras de una cadena determinada.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj56">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 57 Referencia: 15 Realizado por: Rubén García Jiménez</strong><BR><br><em></em>Escriba un programa JavaScript para obtener la diferencia entre un número dado y 13, si el número es mayor que 13 devuelva el doble de la diferencia absoluta.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj57">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 58 Referencia: 150 Realizado por: Rubén García Jiménez</strong><BR><br><em></em>Escriba un programa JavaScript para intercambiar pares de dígitos adyacentes de un número entero dado de longitud par.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj58">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 50 Referencia: 16 Realizado por: Rubén García Jiménez</strong><BR><br><em></em>Escriba un programa JavaScript para calcular la suma de los dos números enteros dados. Si los dos valores son iguales, devuelve el triple de su suma.</em></p>
+            <pre>
+                function <strong>CalcularNumero() </strong>
+                {
+                }
+            </pre>
+    
+            <strong><p id="ValEj59">Solución:</p></strong>
+            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <br>
+            <br>
+            <hr>
+            
+            <script>
+            </script>
+        </div>
+
+        <div>
+            <p><strong>Ejercicio: 60 Referencia: 16 Realizado por: Fco Javier Moreno Quevedo</strong><BR><br><em> Escriba un programa JavaScript para calcular la diferencia absoluta entre un número especificado y 19. Devuelve el triple de su diferencia absoluta si el número especificado es mayor que 19.</em></p>
             <pre>
             function <strong>CalcularNumero() </strong>
             {
@@ -83,7 +1166,7 @@
         </div>
 
         <div>
-            <p><strong>Ejercicio: 61 Referencia: 18</strong><BR><br><em>Escriba un programa JavaScript para verificar dos números dados y devolver verdadero si uno de los números es 50 o si su suma es 50.</em></p>
+            <p><strong>Ejercicio: 61 Referencia: 18 Realizado por: Fco Javier Moreno Quevedo</strong><BR><br><em>Escriba un programa JavaScript para verificar dos números dados y devolver verdadero si uno de los números es 50 o si su suma es 50.</em></p>
             <pre>
                 function <strong>Devolver50</strong>() 
                 {
@@ -195,7 +1278,7 @@
             </script>
         </div>
         <div>
-            <p><strong>Ejercicio: 62 Referencia: 19</strong><BR><br><em>Escriba un programa JavaScript para verificar si un número entero está dentro de 20 de 100 o 400.</em></p>
+            <p><strong>Ejercicio: 62 Referencia: 19 Realizado por: Fco Javier Moreno Quevedo</strong><BR><br><em>Escriba un programa JavaScript para verificar si un número entero está dentro de 20 de 100 o 400.</em></p>
             <pre>
                 function <strong>EstaEntre</strong>() 
                 {
@@ -286,7 +1369,7 @@
         </div>
 
         <div id="Ejercicio63">
-            <p><strong>Ejercicio: 63 Referencia: 2</strong><BR><br><em>Escriba un programa JavaScript para imprimir el contenido de la ventana actual.</em></p>
+            <p><strong>Ejercicio: 63 Referencia: 2 Realizado por: Fco Javier Moreno Quevedo</strong><BR><br><em>Escriba un programa JavaScript para imprimir el contenido de la ventana actual.</em></p>
             <pre>
                 function <strong>Imprimir</strong>()
                 {
@@ -309,7 +1392,7 @@
         </div>
 
         <div >
-            <p><strong>Ejercicio: 64 Referencia: 20</strong><BR><br><em>Escriba un programa JavaScript para verificar a partir de dos números enteros dados, si uno es positivo y otro negativo.</em></p>
+            <p><strong>Ejercicio: 64 Referencia: 20 Realizado por: Fco Javier Moreno Quevedo</strong><BR><br><em>Escriba un programa JavaScript para verificar a partir de dos números enteros dados, si uno es positivo y otro negativo.</em></p>
             <pre>
                 function <strong>Evaluar</strong>()
                 {
@@ -431,7 +1514,7 @@
 
 
         <div >
-            <p><strong>Ejercicio: 65 Referencia: 21</strong><BR><br><em>Escriba un programa JavaScript para crear una nueva cadena agregando "Py" delante de una cadena dada. Si la cadena dada comienza con "Py", devuelve la cadena original.</em></p>
+            <p><strong>Ejercicio: 65 Referencia: 21 Realizado por: Fco Javier Moreno Quevedo</strong><BR><br><em>Escriba un programa JavaScript para crear una nueva cadena agregando "Py" delante de una cadena dada. Si la cadena dada comienza con "Py", devuelve la cadena original.</em></p>
             <pre>
                 function <strong>AddPy</strong>()
                 {
@@ -499,7 +1582,7 @@
 
 
         <div >
-            <p><strong>Ejercicio: 66 Referencia: 22</strong><BR><br><em>Escriba un programa JavaScript para eliminar un carácter en la posición especificada de una cadena dada y devolver la nueva cadena.</em></p>
+            <p><strong>Ejercicio: 66 Referencia: 22 Realizado por: Fco Javier Moreno Quevedo</strong><BR><br><em>Escriba un programa JavaScript para eliminar un carácter en la posición especificada de una cadena dada y devolver la nueva cadena.</em></p>
             <pre>
                 function <strong>DelChar</strong>()
                 {
@@ -595,7 +1678,7 @@
     </body>
 
     <div >
-        <p><strong>Ejercicio: 67 Referencia: 23</strong><BR><br><em>Escriba un programa JavaScript para crear una nueva cadena a partir de una cadena dada cambiando la posición del primer y último carácter. La longitud de la cadena debe ser mayor o igual a 1.</em></p>
+        <p><strong>Ejercicio: 67 Referencia: 23 Realizado por: Fco Javier Moreno Quevedo</strong><BR><br><em>Escriba un programa JavaScript para crear una nueva cadena a partir de una cadena dada cambiando la posición del primer y último carácter. La longitud de la cadena debe ser mayor o igual a 1.</em></p>
         <pre>
             function <strong>DelChar</strong>()
             {
@@ -652,4 +1735,365 @@
     </div>
 
 
+    <div >
+
+        <p><strong>Ejercicio: 68 Referencia: 24 Realizado por: Juan José Salvador Román</strong><BR><br><em>Escriba un programa JavaScript para crear una nueva cadena a partir de una cadena dada con el primer carácter de la cadena dada agregado al principio y al final.</em></p>
+        <div class="tarea">
+            <div class="codigo">
+                <pre>
+                    function Pract68(cadenaOrigen){
+                        document.getElementById("txt682").innerHTML = cadenaOrigen[0] + cadenaOrigen + cadenaOrigen[0];
+                    }
+                </pre>
+            </div>
+    
+            <div class="resultado">
+                <label for="name">Inserte cadena:</label>
+                <input type="text" id="txt681" size="20" name = "Cadena" placeholder = "Introduzca cadena" required>
+                <button onclick="Pract68(txt681.value)" style="color:white; background-color:blue">Try It</button>
+                <div class = "resultn" id="txt682">Result</div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <script>
+            function Pract68(cadenaOrigen){
+                document.getElementById("txt682").style = " font-weight: bold;color:blue;"
+
+                if ((cadenaOrigen.trim()).length > 0) {
+                    document.getElementById("txt682").innerHTML = cadenaOrigen[0] + cadenaOrigen + cadenaOrigen[0];
+                }else{
+                    document.getElementById("txt682").innerHTML ="Debe introducir un texto";
+                    document.getElementById("txt682").style = "color:red"
+                }
+            }
+    </script>
+    </div>
+
+    <div>
+        <p><strong>Ejercicio: 69 Referencia: 25 Realizado por: Juan José Salvador Román</strong><BR><br><em>Escriba un programa JavaScript para comprobar si un número positivo dado es múltiplo de 3 o múltiplo de 7.</em></p>
+            <div class="codigo">
+                <pre>
+                    function Pract69(numeroOrigen){
+                        if (numeroOrigen % 3 === 0 || numeroOrigen % 7 === 0) {
+                            document.getElementById("result69").innerHTML = "Es divisible entre 3 o 7";
+                        }else{
+                            document.getElementById("result69").innerHTML = "No es divisble entre 3 ni entre 7";
+                        }
+                    }
+                </pre>
+            </div>
+    
+            <div class="resultado">
+                <label for="name">Inserte número:</label>
+                <input type="number" id="num691" name = "numero" required autofocus style="width: 60px;" min="1" pattern="^[0-9]+" value=0>
+                <button onclick="Pract69(num691.value)" style="color:white; background-color:blue">Try It</button>
+                <div class = "resultn" id="result69">Result</div>
+            </div>
+            <br>
+        <br>
+        <hr>
+        
+        <script>
+            function Pract69(numeroOrigen){
+                document.getElementById("result69").style = " font-weight: bold;color:blue;"
+
+                if (numeroOrigen.length > 0){
+                    if (numeroOrigen % 3 === 0 || numeroOrigen % 7 === 0){
+                        document.getElementById("result69").innerHTML = "Es divisible entre 3 o 7";
+                    }else{
+                        document.getElementById("result69").innerHTML = "No es divisble entre 3 ni entre 7";
+                    }
+                }else{
+                    document.getElementById("result69").innerHTML ="Debe introducir un número";
+                    document.getElementById("result69").style = "color:red"
+                }
+            }
+        </script>
+    </div>
+    
+    <div>
+        <p><strong>Ejercicio: 70 Referencia: 26 Realizado por: Juan José Salvador Román</strong><BR><br><em>Escriba un programa JavaScript para crear una nueva cadena a partir de una cadena dada, tomando los últimos 3 caracteres y agregándolos al frente y al dorso. La longitud de la cuerda debe ser 3 o más.</em></p>
+        <div class="codigo">
+            <pre>
+                function Pract70(cadenaOrigen){
+                    document.getElementById("result70").style = " font-weight: bold;color:blue;"
+                    if ((cadenaOrigen.trim()).length > 0) {
+                        if (cadenaOrigen.length >= 3){
+                            let substr =cadenaOrigen.substring(cadenaOrigen.length, cadenaOrigen.length-3) ;
+                            document.getElementById("result70").innerHTML =     substr + cadenaOrigen + substr;
+                        }else{
+                            document.getElementById("result70").innerHTML ="La cadena debe contener, al menos, 3 caracteres";
+                            document.getElementById("result70").style = "color:red"
+                        }
+                    }else{
+                        document.getElementById("result70").innerHTML ="Debe introducir un texto";
+                        document.getElementById("result70").style = "color:red"
+                    }
+                }
+            </pre>
+        </div>
+
+        <div class="resultado">
+            <label for="name">Inserte cadena:</label>
+            <input type="text" id="txt701" size="20" min ="3" name = "cadena" placeholder = "Introduzca cadena" required>
+            <button onclick="Pract70(txt701.value)" style="color:white; background-color:blue">Try It</button>
+            <div class = "resultn" id="result70">Result</div>
+        </div>
+
+        <br>
+        <br>
+        <hr>
+        
+        <script>
+            function Pract70(cadenaOrigen){
+                document.getElementById("result70").style = " font-weight: bold;color:blue;"
+                if ((cadenaOrigen.trim()).length > 0) {
+                    if (cadenaOrigen.length >= 3){
+                        let substr =cadenaOrigen.substring(cadenaOrigen.length, cadenaOrigen.length-3) ;
+                        document.getElementById("result70").innerHTML =     substr + cadenaOrigen + substr;
+                    }else{
+                        document.getElementById("result70").innerHTML ="La cadena debe contener, al menos, 3 caracteres";
+                        document.getElementById("result70").style = "color:red"
+                    }
+                }else{
+                    document.getElementById("result70").innerHTML ="Debe introducir un texto";
+                    document.getElementById("result70").style = "color:red"
+                }
+            }
+        </script>
+    </div>
+    <div>
+        <p><strong>Ejercicio: 71 Referencia: 27 Realizado por: Juan José Salvador Román</strong><BR><br><em>Escriba un programa JavaScript para verificar si una cadena comienza con 'Java' y falso en caso contrario.</em></p>
+        <pre>
+            function Pract71(cadenaOrigen){
+                document.getElementById("result71").style = " font-weight: bold;color:blue;"
+                if ((cadenaOrigen.trim()).length > 0) {
+                    if (cadenaOrigen.substring(0,4) === 'Java') {
+                        document.getElementById("result71").innerHTML = "Si empieza por Java";
+                    }else{
+                        document.getElementById("result71").innerHTML = "No empieza por Java";
+                    }
+                }else{
+                    document.getElementById("result71").innerHTML ="Debe introducir un texto";
+                    document.getElementById("result71").style = "color:red"
+                }
+            }
+        </pre>
+
+        <div class="codigo">
+            <pre>
+                function Pract71(cadenaOrigen){
+                    if (cadenaOrigen.substring(0,4) === 'Java') {
+                        document.getElementById("result71").innerHTML = "Si empieza por Java";
+                    }else{
+                        document.getElementById("result71").innerHTML = "No empieza por Java";
+                    }
+                }
+            </pre>
+        </div>
+
+        <div class="resultado">
+            <label for="name">Inserte cadena:</label>
+            <input type="text" id="txt711" size="20" min ="3" name = "cadena" placeholder = "Introduzca cadena" required>
+            <button onclick="Pract71(txt711.value)" style="color:white; background-color:blue">Try It</button>
+            <div class = "resultn"  id="result71">Result</div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        
+        <script>
+            function Pract71(cadenaOrigen){
+                document.getElementById("result71").style = " font-weight: bold;color:blue;"
+                if ((cadenaOrigen.trim()).length > 0) {
+                    if (cadenaOrigen.substring(0,4) === 'Java') {
+                        document.getElementById("result71").innerHTML = "Si empieza por Java";
+                    }else{
+                        document.getElementById("result71").innerHTML = "No empieza por Java";
+                    }
+                }else{
+                    document.getElementById("result71").innerHTML ="Debe introducir un texto";
+                    document.getElementById("result71").style = "color:red"
+                }
+            }
+        </script>
+    </div>
+    <div>
+        <p><strong>Ejercicio: 72 Referencia: 28 Realizado por: Juan José Salvador Román</strong><BR><br><em>Escriba un programa JavaScript para verificar si dos valores enteros dados están en el rango 50..99 (inclusive). Devuelve verdadero si alguno de ellos está en dicho rango.</em></p>
+        
+        <div class="codigo">
+            <pre>
+                function Pract72(numeroOrigen1, numeroOrigen2){
+                    if ((numeroOrigen1 >= 50 && numeroOrigen1 &lt;= 99) || ((numeroOrigen2 >= 50 && numeroOrigen2 &lt;= 99))){
+                        document.getElementById("result72").innerHTML = "Al menos uno de los número está en el rango (50-99)";
+                    }else{
+                        document.getElementById("result72").innerHTML = "Ninguno de los números está en el rango (50-99)";
+                    }
+                }
+
+            </pre>
+        </div>
+
+        <div class="resultado">
+            <label for="name">Inserte 3 números:</label>
+                <input type="number" id="num721"  placeholder = "número" name = "numero1" required style="width: 60px;" value=0>
+                ,
+                <input type="number" id="num722" placeholder = "número" name = "numero2" required style="width: 60px;" value=0>
+                <button onclick="Pract72(num721.value, num722.value)" style="color:white; background-color:blue">Try It</button>
+            <div class = "resultn" id="result72">Result</div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        
+        <script>
+            function Pract72(numeroOrigen1, numeroOrigen2){
+                document.getElementById("result72").style = " font-weight: bold;color:blue;"
+                if (numeroOrigen1.length > 0 && numeroOrigen2.length > 0){
+                    if ((numeroOrigen1 >= 50 && numeroOrigen1 <= 99) || ((numeroOrigen2 >= 50 && numeroOrigen2 <= 99))){
+                        document.getElementById("result72").innerHTML = "Al menos uno de los número está en el rango (50-99)";
+                    }else{
+                        document.getElementById("result72").innerHTML = "Ninguno de los números está en el rango (50-99)";
+                    }
+                }else{
+                    document.getElementById("result72").innerHTML ="Debe introducir 2 numeros";
+                    document.getElementById("result72").style = "color:red"
+                }
+            }
+        </script>
+    </div>
+    <div>
+        <p><strong>Ejercicio: 73 Referencia: 29 Realizado por: Juan José Salvador Román</strong><BR><br><em>Escriba un programa JavaScript para verificar si tres valores enteros dados están en el rango 50..99 (inclusive). Devuelve verdadero si uno o más de ellos están en dicho rango.</em></p>
+
+        <div class="codigo">
+            <pre>
+                if ((numeroOrigen1 >= 50 && numeroOrigen1 &lt;= 99) || (numeroOrigen2 >= 50 && numeroOrigen2 &lt;= 99) || (numeroOrigen3 >= 50 && numeroOrigen3 &lt;= 99)){
+                    document.getElementById("result73").innerHTML = "Al menos uno de los número está en el rango (50-99)";
+                }else{
+                    document.getElementById("result73").innerHTML = "Ninguno de los números está en el rango (50-99)";
+                }
+            </pre>
+        </div>
+
+        <div class="resultado">
+            <label for="name">Inserte 2 números:</label>
+                <input type="number" id="num731" size="3" placeholder = "número" name = "numero1" required style="width: 60px;" value=0>
+                ,
+                <input type="number" id="num732" size="3" placeholder = "número" name = "numero2" required style="width: 60px;" value=0>
+                ,
+                <input type="number" id="num733" size="3" placeholder = "nnúmero" name = "numero3" required style="width: 60px;" value=0>
+                <button onclick="Pract73(num731.value, num732.value, num733.value)" style="color:white; background-color:blue">Try It</button>
+            <div class = "resultn" id="result73">Result</div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        
+        <script>
+            function Pract73(numeroOrigen1, numeroOrigen2, numeroOrigen3){
+                document.getElementById("result73").style = " font-weight: bold;color:blue;"
+                if (numeroOrigen1.length > 0 && numeroOrigen2.length > 0 && numeroOrigen3.length > 0){
+                    if ((numeroOrigen1 >= 50 && numeroOrigen1 <= 99) || (numeroOrigen2 >= 50 && numeroOrigen2 <= 99) || (numeroOrigen3 >= 50 && numeroOrigen3 <= 99)){
+                        document.getElementById("result73").innerHTML = "Al menos uno de los número está en el rango (50-99)";
+                    }else{
+                        document.getElementById("result73").innerHTML = "Ninguno de los números está en el rango (50-99)";
+                    }
+                }else{
+                    document.getElementById("result73").innerHTML ="Debe introducir 2 numeros";
+                    document.getElementById("result73").style = "color:red"
+                }
+            }
+        </script>
+    </div>
+    <div>
+        <p><strong>Ejercicio: 74 Referencia: 3 Realizado por: Juan José Salvador Román</strong><BR><br><em>Escriba un programa JavaScript para obtener la fecha actual. Resultado  esperado : mm-dd-aaaa, mm / dd / aaaa o dd-mm-aaaa, dd / mm / aaaa</em></p>
+        <div class="codigo">
+            <pre>
+                function Pract74(){
+                    let fecha =new Date();
+                    let dia =fecha.getDate();
+                    let mes = fecha.getMonth();
+                    let year =fecha.getFullYear();
+                
+                    /*mm-dd-aaaa*/
+                    document.getElementById("result741").innerHTML = mes + '-' + dia + '-' + year;
+                    /*mm/dd/aaaa o dd-mm-aaaa*/
+                    document.getElementById("result742").innerHTML = mes + '/' + dia + '/' + year + '        ' + dia + '-' + mes + '-' + year;
+                    /*dd/mm/aaaa*/
+                    document.getElementById("result743").innerHTML = dia + '/' + mes + '/' + year;
+                }
+            </pre>
+        </div>
+
+        <div class="resultado">
+            <button onclick="Pract74()" style="color:white; background-color:blue">Try It</button>
+            <div class = "resultn" id="result741">Result</div>
+            <div class = "resultn" id="result742"></div>
+            <div class = "resultn" id="result743"></div>
+        </div>
+        <br>
+        <br>
+        <hr>
+        
+        <script>
+            function Pract74(){
+                let fecha =new Date();
+                let dia =fecha.getDate();
+                let mes = fecha.getMonth();
+                let year =fecha.getFullYear();
+
+                /*mm-dd-aaaa*/
+                document.getElementById("result741").innerHTML = mes + '-' + dia + '-' + year;
+                /*mm/dd/aaaa o dd-mm-aaaa*/
+                document.getElementById("result742").innerHTML = mes + '/' + dia + '/' + year + '&nbsp;&nbsp;&nbsp;-o-&nbsp;&nbsp;&nbsp;' + dia + '-' + mes + '-' + year;
+                /*dd/mm/aaaa*/
+                document.getElementById("result743").innerHTML = dia + '/' + mes + '/' + year;
+            }
+        </script>
+    </div>
+    <div>
+        <p><strong>Ejercicio: 75 Referencia: 30 Realizado por: Juan José Salvador Román</strong><BR><br><em>Escriba un programa JavaScript para verificar si una cadena "Script" se presenta en la quinta posición (índice 4) en una cadena dada, si "Script" se presenta en la cadena, devuelva la cadena sin "Script"; de lo contrario, devuelva la original.</em></p>
+            <div class="codigo">
+                <pre>
+                    function Pract75(cadenaOriginal){
+                        const Cadena = "Script";
+                        if (cadenaOriginal.includes(Cadena,4)){
+                            document.getElementById("result75").innerHTML = cadenaOriginal.substring(0,4) + cadenaOriginal.substring(4 + Cadena.length,cadenaOriginal.length);
+                        }else{
+                            document.getElementById("result75").innerHTML = cadenaOriginal;
+                        }
+                    }
+                </pre>
+            </div>
+    
+            <div class="resultado">
+                <label for="name">Inserte cadena:</label>
+                <input type="text" id="txt751" placeholder="Introduzca cadena" min ="3" >
+                <button onclick="Pract75(txt751.value)" style="color:white; background-color:blue">Try It</button>
+                <div class = "resultn"  id="result75">Result</div>
+            </div>
+        <br>
+        <br>
+        <hr>
+        
+        <script>
+            function Pract75(cadenaOriginal){
+                const Cadena = "Script";
+                document.getElementById("result75").style = " font-weight: bold;color:blue;"
+
+                if ((cadenaOriginal.trim()).length > 0) {
+                    if (cadenaOriginal.includes(Cadena,4)){
+                        document.getElementById("result75").innerHTML = cadenaOriginal.substring(0,4) + cadenaOriginal.substring(4 + Cadena.length,cadenaOriginal.length);
+                    }else{
+                        document.getElementById("result75").innerHTML = cadenaOriginal;
+                    }
+                }else{
+                    document.getElementById("result75").innerHTML ="Debe introducir un texto";
+                    document.getElementById("result75").style = "color:red"
+                }
+            }
+        </script>
+    </div>
 </html>
