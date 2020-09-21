@@ -5,10 +5,11 @@
         <meta name="viewport" content="width=100, initial-scale=1.0">
         <title>Document</title>
         <style>
-            p{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+            body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+            /*p{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
             input{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
             button{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-            label{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+            label{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}*/
         </style>
     </head>
     <body>
@@ -464,23 +465,21 @@
         <div>
             <p ><strong>Ejercicio: 43 Referencia: 137 Realizado por: Miguel Angel Cabreo Luego</strong><BR><br><em>Escriba un programa JavaScript para probar si un entero dado es mayor que 15, devuelva el número dado; de lo contrario, devuelva 15.</em></p>
             <pre>
-                function <strong>CalcularNumero() </strong>
+                function obtenerResultado_mac_ejer43()
                 {
-                    function obtenerResultado_mac_ejer43()
+                    let numero_mac_ejer43 = document.getElementById("numero_mac_ejer43").value;
+                    numero_mac_ejer43 = numero_mac_ejer43 *1;
+                    if (!Number.isInteger(numero_mac_ejer43))
                     {
-                        let numero_mac_ejer43 = document.getElementById("numero_mac_ejer43").value;
-                        numero_mac_ejer43 = numero_mac_ejer43 *1;
-                        if (!Number.isInteger(numero_mac_ejer43))
-                        {
-                            alert("El número introducido no es un valor entero");
-                            return false;
-                        }
-                        let linea = "El número introducido ["+ numero_mac_ejer43 + "] es menor o igual a 15";
-                        if (numero_mac_ejer43>15)
-                        {
-                            linea = "El número introducido ["+ numero_mac_ejer43 + "] es mayor que 15";
-                        }
-                        document.getElementById("resultados_mac_ejer43").innerHTML = linea;       
+                        alert("El número introducido no es un valor entero");
+                        return false;
+                    }
+                    let linea = "El número introducido ["+ numero_mac_ejer43 + "] es menor o igual a 15";
+                    if (numero_mac_ejer43>15)
+                    {
+                        linea = "El número introducido ["+ numero_mac_ejer43 + "] es mayor que 15";
+                    }
+                    document.getElementById("resultados_mac_ejer43").innerHTML = linea;       
                 }
             </pre>
             <label for="Eje">Introduzca número entero:</label>
@@ -488,7 +487,6 @@
             <button type="button" value="Data" onclick="obtenerResultado_mac_ejer43();">Obtener resultado</button>
             <div id="resultados_mac_ejer43"></div>
             <script>
-                let factoresPrimos = []; //Aquí introducimos el resultado
                 function obtenerResultado_mac_ejer43()
                 {
                     let numero_mac_ejer43 = document.getElementById("numero_mac_ejer43").value;
@@ -842,71 +840,263 @@
         <div>
             <p><strong>Ejercicio: 46 Referencia: 14 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em>Escriba un ejercicio de JavaScript para obtener la extensión de un nombre de archivo.</em></p>
             <pre>
-                function <strong>CalcularNumero() </strong>
+                const obtnerextension = function ()
                 {
-                }
+                        
+                        var pathfichero = document.getElementById("myFile").value;
+                        if (!(document.getElementById("myFile").value))
+                        {   alert ("selecciona un archivo");
+                            document.getElementById("myFile").click();
+                            return (false);
+                        } 
+                        
+                        var posicionultimopunto = pathfichero.lastIndexOf(".");
+                        var resultado = pathfichero.substring(posicionultimopunto + 1);
+                        if (posicionultimopunto &lt; 0) 
+                        {
+                            document.getElementById("divresultado").innerText ="El fichero seleccionado no tiene extensión";
+                        }
+                        else 
+                        {    document.getElementById("divresultado").innerText ="La extensión del archivo es " + resultado;
+                        }
+                }    
+        
             </pre>
-    
-            <strong><p id="ValEj46">Solución:</p></strong>
-            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+             
+            <input type="file" id="myFile" required><br>
             <br>
+            <input type="button" id="btn" name="btn" value="Extensión" onclick="obtnerextension()"><br>
+            <br>
+            <div id="divresultado46"></div>
             <br>
             <hr>
             
             <script>
+                const obtnerextension = function ()
+                 {
+                
+                    var pathfichero = document.getElementById("myFile").value;
+                    if (!(document.getElementById("myFile").value))
+                    {   alert ("selecciona un archivo");
+                        document.getElementById("myFile").click();
+                        return (false);
+                    } 
+                    
+                    var posicionultimopunto = pathfichero.lastIndexOf(".");
+                    var resultado = pathfichero.substring(posicionultimopunto + 1);
+                    if (posicionultimopunto < 0) 
+                    {
+                        document.getElementById("divresultado46").innerText ="El fichero seleccionado no tiene extensión";
+                    }
+                    else 
+                    {    document.getElementById("divresultado46").innerText ="La extensión del archivo es " + resultado;
+                    }
+
+
+                    /* visualizacion */
+                    //document.getElementById("codigojavascript").innerHTML=  "<pre>" + obtnerextension + "</pre>";
+                }    
+
             </script>
         </div>
 
         <div>
             <p><strong>Ejercicio: 47 Referencia: 140 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em>Escriba un programa JavaScript para comprobar si todos los dígitos de un número dado son iguales o no.</em></p>
             <pre>
-                function <strong>CalcularNumero() </strong>
-                {
-                }
+                const myfuncion = function ()
+                    {
+                        var resultado ="SI";
+                        document.getElementById("divresultado").innerText="";
+                        document.getElementById("codigojavascript").innerHTML="";
+
+
+                            var numero = document.getElementById("entrada").value;
+                            var patron = /^\d+$/; //Expresión regular para aceptar solo números enteros
+                        
+                            if (patron.test(numero)) {    
+                                
+                                var caracter = numero.charAt(0);        
+                                for (var i = 1; i&lt; numero.length; i++) {
+                                    var nuevocaracter = numero.charAt(i);
+                                    if (caracter != nuevocaracter)
+                                    {
+                                        resultado="NO";
+                                                break;
+                                    }
+                                }
+                            
+                            }else {
+                            alert("el valor del número debe ser entero positivo");
+                            numero.focus();
+                            return (false);
+                            }
+                            document.getElementById("divresultado").innerText ="Los digitos "+ resultado + " son todos iguales";
+                    }    
             </pre>
     
-            <strong><p id="ValEj47">Solución:</p></strong>
-            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <input type="number" min="0" max="99999999999" id="entrada47">
             <br>
+            <input type="button" id="btn47" name="btn47" value="comprobar" onclick="myfuncion47()"><br>
+            <br>   
+            <div id="divresultado47"></div>
             <br>
             <hr>
             
             <script>
+                  const myfuncion47 = function ()
+                    {
+                        var resultado ="SI";
+                        document.getElementById("divresultado47").innerText="";
+
+                        var numero = document.getElementById("entrada47").value;
+                        var patron = /^\d+$/; //Expresión regular para aceptar solo números enteros
+                    
+                        if (patron.test(numero)) {    
+                            
+                            var caracter = numero.charAt(0);        
+                            for (var i = 1; i< numero.length; i++) {
+                                var nuevocaracter = numero.charAt(i);
+                                if (caracter != nuevocaracter)
+                                {
+                                    resultado="NO";
+                                            break;
+                                }
+                            }
+                        }else {
+                        alert("el valor del número debe ser entero positivo");
+                        numero.focus();
+                        return (false);
+                        }
+                        document.getElementById("divresultado47").innerText ="Los digitos "+ resultado + " son todos iguales";
+                    }    
             </script>
         </div>
         <div>
             <p><strong>Ejercicio: 48 Referencia: 141 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em>Escriba un programa de JavaScript para encontrar la cantidad de elementos que se presentan en ambos arreglos dados.</em></p>
             <pre>
-                function <strong>CalcularNumero() </strong>
+                const myfuncion = function ()
                 {
-                }
+                    let arraynumeros1 = new Array();
+                    let arraynumeros2 = new Array();
+
+                    let n1 = Math.round( (Math.random () * 100));
+                    let n2 = Math.round( (Math.random () * 100));
+                    for (let i=0;i&lt; n1; i ++){
+
+                        arraynumeros1.push (Math.round( (Math.random () * 100)));
+                    }
+                            
+                    for (let i=0;i&lt; n2; i ++){
+
+                    arraynumeros2.push (Math.round( (Math.random () * 100)));
+                    }
+                    
+        
+                    document.getElementById("divresultado").innerText="";
+
+                    document.getElementById("divresultado").innerHTML="Array 1: &lt;br&gt;" + arraynumeros1;
+                    document.getElementById("divresultado").innerHTML+="&lt;br&gt;";
+                    document.getElementById("divresultado").innerHTML+="Elementos de Array 1: " + arraynumeros1.length;
+                    document.getElementById("divresultado").innerHTML+="&lt;br&gt;";
+                    document.getElementById("divresultado").innerHTML+="Array 2: &lt;br&gt;" + arraynumeros2;
+                    document.getElementById("divresultado").innerHTML+="&lt;br&gt;";
+                    document.getElementById("divresultado").innerHTML+="Elementos de Array 2: " + arraynumeros2.length;
             </pre>
     
-            <strong><p id="ValEj48">Solución:</p></strong>
-            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <input type="button" id="btn" name="btn" value="comprobar" onclick="myfuncion48()"><br>
+            <br>
+            <div id="divresultado48"></div>
+            <br>
             <br>
             <br>
             <hr>
             
             <script>
+                 const myfuncion48 = function ()
+                {
+                    let arraynumeros1 = new Array();
+                    let arraynumeros2 = new Array();
+
+                    let n1 = Math.round( (Math.random () * 100));
+                    let n2 = Math.round( (Math.random () * 100));
+                    for (let i=0;i< n1; i ++){
+
+                        arraynumeros1.push (Math.round( (Math.random () * 100)));
+                    }
+                            
+                    for (let i=0;i< n2; i ++){
+
+                        arraynumeros2.push (Math.round( (Math.random () * 100)));
+                    }
+                
+        
+                    document.getElementById("divresultado48").innerText="";
+                    document.getElementById("divresultado48").innerHTML="Array 1: <br>" + arraynumeros1;
+                    document.getElementById("divresultado48").innerHTML+="<br>";
+                    document.getElementById("divresultado48").innerHTML+="Elementos de Array 1: " + arraynumeros1.length;
+                    document.getElementById("divresultado48").innerHTML+="<br>";
+                    document.getElementById("divresultado48").innerHTML+="Array 2: <br>" + arraynumeros2;
+                    document.getElementById("divresultado48").innerHTML+="<br>";
+                    document.getElementById("divresultado48").innerHTML+="Elementos de Array 2: " + arraynumeros2.length;
+
+                }    
             </script>
         </div>
 
         <div>
             <p><strong>Ejercicio: 49 Referencia: 142 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em></em>Escriba un programa JavaScript para simplificar una ruta absoluta dada para un archivo en estilo Unix.</em></p>
             <pre>
-                function <strong>CalcularNumero() </strong>
+                const myfuncion49 = function ()
                 {
-                }
+                
+                const ruta = "/var/log/mysql/error.log";
+
+                let str =ruta;
+
+                document.getElementById("divresultado").innerHTML= str + "&lt;br&gt;";;
+
+                let posicionultimopunto =  str.lastIndexOf("/") ;
+                do {
+                    posicionultimopunto =  str.lastIndexOf("/") ;
+                
+                
+                    document.getElementById("divresultado").innerHTML+=str.substring(posicionultimopunto + 1) + "&lt;br&gt;";
+                    
+                    str = str.substring(0,posicionultimopunto );
+                    
+                    } while (str!="" && posicionultimopunto >0);
+
+                }    
             </pre>
-    
-            <strong><p id="ValEj49">Solución:</p></strong>
-            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <input type="button" id="btn" name="btn" value="comprobar" onclick="myfuncion49()"><br>
+            <br>
+            <div id="divresultado"></div>
             <br>
             <br>
             <hr>
             
             <script>
+                 const myfuncion49 = function ()
+                {
+                
+                const ruta = "/var/log/mysql/error.log";
+
+                let str =ruta;
+
+                document.getElementById("divresultado").innerHTML= str + "<br>";;
+
+                let posicionultimopunto =  str.lastIndexOf("/") ;
+                do {
+                    posicionultimopunto =  str.lastIndexOf("/") ;
+                
+                
+                    document.getElementById("divresultado").innerHTML+=str.substring(posicionultimopunto + 1) + "<br>";
+                    
+                    str = str.substring(0,posicionultimopunto );
+                    
+                    } while (str!="" && posicionultimopunto >0);
+
+                }    
             </script>
         </div>
 
@@ -914,18 +1104,34 @@
         <div>
             <p><strong>Ejercicio: 50 Referencia: 143 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em></em>Escriba un programa JavaScript para ordenar las cadenas de una matriz dada de cadenas en el orden de longitudes crecientes. Nota: No cambie el orden si las longitudes de dos cadenas  son iguales.</em></p>
             <pre>
-                function <strong>CalcularNumero() </strong>
+                const myfuncion50 = function ()
                 {
-                }
+                var arraycadenas = ["la mas larga","casa", "arbol", "caserio", "pepe", "roma", "a", "romo", "cero"];
+                document.getElementById("divresultado").innerHTML = arraycadenas + "&lt;br&gt;";
+
+
+                arraycadenas.sort(function(a, b){return a.length-b.length});
+                document.getElementById("divresultado").innerHTML += arraycadenas;
+                }    
             </pre>
     
-            <strong><p id="ValEj50">Solución:</p></strong>
-            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <input type="button" id="btn" name="btn" value="comprobar" onclick="myfuncion50()"><br>
+            <br>
+            <div id="divresultado50"></div>
             <br>
             <br>
             <hr>
             
             <script>
+                 const myfuncion50 = function ()
+                    {
+                    var arraycadenas = ["la mas larga","casa", "arbol", "caserio", "pepe", "roma", "a", "romo", "cero"];
+                    document.getElementById("divresultado50").innerHTML = arraycadenas + "<br>";
+
+
+                    arraycadenas.sort(function(a, b){return a.length-b.length});
+                    document.getElementById("divresultado50").innerHTML += arraycadenas;
+                    }    
             </script>
         </div>
 
@@ -933,54 +1139,206 @@
         <div>
             <p><strong>Ejercicio: 51 Referencia: 144 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em></em>Escriba un programa JavaScript para romper la dirección de una URL y poner su parte en una matriz. Nota: estructura de la URL: //.org [/] y es posible que no haya parte en la dirección.</em></p>
             <pre>
-                function <strong>CalcularNumero() </strong>
-                {
-                }
+                const myfuncion51 = function (valor) {
+
+
+                    let url = document.getElementById("txturl").value;
+                    let matriz = new Array();
+    
+                    let url1 = url.substr(url.indexOf("://") + 3, url.length);
+                    matriz = url1.split("/");
+    
+                    if (url.indexOf("://") != -1)
+                        matriz.splice(0, 0, url.substr(0, url.indexOf("://") + 3));
+    
+                    /* visualizacion */
+                    for (i = 0; i &lt; matriz.length; i++) {
+                        let li = document.createElement("li");
+                        li.innerText = matriz[i];
+                        document.getElementById("lista").appendChild(li);
+                    }
+    
+                    }
             </pre>
     
-            <strong><p id="ValEj51">Solución:</p></strong>
-            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <input type="text" id="txturl51" style="width:80%" value="https://www.w3schools.com/js/js_array_methods.asp"> <br>
+            <br>
+            <input type="button" id="btn" name="btn" value="comprobar" onclick="myfuncion51(0)"><br>
+            <br>
+            <div id="divresultado51">
+                <ul id="lista51"></ul>
+            </div>
             <br>
             <br>
             <hr>
             
             <script>
+                const myfuncion51 = function (valor) {
+
+
+                let url = document.getElementById("txturl51").value;
+                let matriz = new Array();
+
+                let url1 = url.substr(url.indexOf("://") + 3, url.length);
+                matriz = url1.split("/");
+
+                if (url.indexOf("://") != -1)
+                    matriz.splice(0, 0, url.substr(0, url.indexOf("://") + 3));
+
+                /* visualizacion */
+                for (i = 0; i < matriz.length; i++) {
+                    let li = document.createElement("li");
+                    li.innerText = matriz[i];
+                    document.getElementById("lista51").appendChild(li);
+                }
+
+                }
             </script>
         </div>
 
         <div>
             <p><strong>Ejercicio: 52 Referencia: 145 Realizado por: Juan Ramón Diaz Fernandez</strong><BR><br><em></em>Escriba un programa JavaScript para encontrar el número entero máximo n tal que 1 + 2 + ... + n &lt;= un número entero dado.</em></p>
             <pre>
-                function <strong>CalcularNumero() </strong>
+                
+                var elemento = Math.round(Math.random() * 1000);
+                var suma=0;
+                let elementos = new Array();
+
+                const myfuncion = function     ( valor)
                 {
+                    elementos.push(valor);
+                    suma = suma + (valor +1) ;
+
+                    if ( suma  &lt;= elemento)
+                    {
+                        
+                        valor++;
+                        myfuncion (valor);
+                    }
+                    else
+                    { 
+
+                        document.getElementById("divresultado").innerHTML= "Número base: " +elemento  + "&lt;br&gt;";
+                        document.getElementById("divresultado").innerHTML+= elementos + "&lt;br&gt;"; 
+                        document.getElementById("divresultado").innerHTML+="Número Máximo: " + valor + "&lt;br&gt;"; 
+                    }
                 }
+
             </pre>
     
-            <strong><p id="ValEj52">Solución:</p></strong>
-            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <input type="button" id="btn52" name="btn52" value="comprobar" onclick="myfuncion52(0)"><br>
+            <div id="divresultado52"></div>
+            <br>
             <br>
             <br>
             <hr>
             
             <script>
+                
+                var elemento = Math.round(Math.random() * 1000);
+                var suma=0;
+                let elementos = new Array();
+
+                const myfuncion52 = function( valor)
+                {
+                    elementos.push(valor);
+                    suma = suma + (valor +1) ;
+
+                    if ( suma  <= elemento)
+                    {
+                        
+                        valor++;
+                        myfuncion (valor);
+                    }
+                    else
+                    { 
+
+                        document.getElementById("divresultado52").innerHTML= "Número base: " +elemento  + "<br>";
+                        document.getElementById("divresultado52").innerHTML+= elementos + "<br>"; 
+                        document.getElementById("divresultado52").innerHTML+="Número Máximo: " + valor + "<br>"; 
+                    }
+                }
+
+        
             </script>
         </div>
 
         <div>
             <p><strong>Ejercicio: 53 Referencia: 146 Realizado por: Rubén García Jiménez</strong><BR><br><em></em>Escriba un programa JavaScript para calcular la suma de cubos de todos los enteros desde 1 hasta un entero dado.</em></p>
             <pre>
-                function <strong>CalcularNumero() </strong>
+                var elemento =  Math.round(Math.random() * 20) ;
+                var suma=0;
+                let elementos = new Array();
+            
+                const myfuncion53 = function     ( valor)
                 {
+                    if (suma==0) {
+                        elementos = [];
+                        elemento =  Math.round(Math.random() * 20) 
+                    }
+
+                    let cubo = valor*valor*valor;
+                    elementos.push(cubo);
+                    suma = suma + cubo ;
+
+                    if ( valor  &lt; elemento)
+                    {
+                        
+                        valor++;
+                        myfuncion (valor);
+                    }
+                    else
+                    { 
+
+                        document.getElementById("divresultado53").innerHTML= "Número base: " +elemento  + "&lt;br&gt;";
+                        document.getElementById("divresultado53").innerHTML+= "cubos: " + elementos + "&lt;br&gt;"; 
+                        
+                        document.getElementById("divresultado53").innerHTML+="Número Máximo: " + suma + "&lt;br&gt;"; 
+                        suma=0;
+                    }
                 }
             </pre>
     
-            <strong><p id="ValEj53">Solución:</p></strong>
-            <input type="button" value="Ejecutar" name="Exe" onclick="CalcularNumero()" />
+            <input type="button" id="btn53" name="btn53" value="comprobar" onclick="myfuncion53(0)"><br>
+            <BR>
+            <div id="divresultado53"></div>
             <br>
             <br>
             <hr>
             
             <script>
+                
+                var elemento53 =  Math.round(Math.random() * 20) ;
+                var suma=0;
+                let elementos53 = new Array();
+            
+                const myfuncion53 = function     ( valor)
+                {
+                    if (suma==0) {
+                        elementos53 = [];
+                        elemento53 =  Math.round(Math.random() * 20) 
+                    }
+
+                    let cubo = valor*valor*valor;
+                    elementos53.push(cubo);
+                    suma = suma + cubo ;
+
+                    if ( valor  < elemento53)
+                    {
+                        
+                        valor++;
+                        myfuncion53 (valor);
+                    }
+                    else
+                    { 
+
+                        document.getElementById("divresultado53").innerHTML= "Número base: " +elemento53  + "<br>";
+                        document.getElementById("divresultado53").innerHTML+= "cubos: " + elementos53 + "<br>"; 
+                        
+                        document.getElementById("divresultado53").innerHTML+="Número Máximo: " + suma + "<br>"; 
+                        suma=0;
+                    }
+                }
             </script>
         </div>
 
@@ -1075,7 +1433,7 @@
         </div>
 
         <div>
-            <p><strong>Ejercicio: 50 Referencia: 16 Realizado por: Rubén García Jiménez</strong><BR><br><em></em>Escriba un programa JavaScript para calcular la suma de los dos números enteros dados. Si los dos valores son iguales, devuelve el triple de su suma.</em></p>
+            <p><strong>Ejercicio: 59 Referencia: 16 Realizado por: Rubén García Jiménez</strong><BR><br><em></em>Escriba un programa JavaScript para calcular la suma de los dos números enteros dados. Si los dos valores son iguales, devuelve el triple de su suma.</em></p>
             <pre>
                 function <strong>CalcularNumero() </strong>
                 {
